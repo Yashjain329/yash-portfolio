@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yash Jain — Flutter & AI Developer</title>
-  <meta name="description" content="Yash Jain — Flutter, Android & AI developer. Building production-ready apps with Dart, Kotlin, Firebase & Supabase."/>
+  <meta name="description" content="Yash Jain — Flutter, Android & AI developer. Building production-ready mobile apps with Dart, Kotlin, Firebase & Supabase."/>
   <meta property="og:title" content="Yash Jain — Flutter & AI Developer"/>
   <meta property="og:description" content="Mobile & AI developer building real-world apps with Flutter, Kotlin, Firebase, and GCP."/>
   <meta property="og:type" content="website"/>
@@ -17,165 +17,171 @@
 
   <!-- NAV -->
   <nav class="nav" id="mainNav">
-    <div class="nav-container">
-      <a href="#hero" class="nav-brand" id="nav-brand">YJ</a>
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" id="nav-brand">Yash Jain</a>
 
-      <div class="nav-menu" id="navMenu">
-        <a href="#about"      class="nav-link" data-section="about">About</a>
-        <a href="#skills"     class="nav-link" data-section="skills">Skills</a>
-        <a href="#projects"   class="nav-link" data-section="projects">Projects</a>
-        <a href="#experience" class="nav-link" data-section="experience">Experience</a>
-        <a href="#contact"    class="nav-link" data-section="contact">Contact</a>
-      </div>
+      <ul class="nav-links" id="navMenu" role="list">
+        <li><a href="#about"      class="nav-link" data-section="about">About</a></li>
+        <li><a href="#skills"     class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#projects"   class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+        <li><a href="#contact"    class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
 
-      <div class="nav-actions">
-        <a href="Yash_Jain_Resume (2).pdf" download class="nav-cta" id="nav-resume-btn">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      <div class="nav-end">
+        <a href="Yash_Jain_Resume (2).pdf" download class="nav-resume" id="nav-resume-btn">
           Resume
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         </a>
-        <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
+        <button class="hamburger" id="navHamburger" aria-label="Toggle menu">
+          <span></span><span></span>
         </button>
       </div>
     </div>
   </nav>
 
-  <!-- ─── HERO ─── -->
-  <section class="page-hero" id="hero">
-    <div class="hero-grid-bg"></div>
+  <!-- ── HERO ── -->
+  <section id="hero" class="hero">
+    <div class="hero-wrap">
 
-    <div class="hero-layout">
-      <div class="hero-content">
-        <div class="hero-availability">
-          <span class="avail-dot"></span>
+      <!-- LEFT -->
+      <div class="hero-left">
+        <div class="hero-status">
+          <span class="status-light"></span>
           Available for opportunities
         </div>
 
-        <h1 class="hero-name">
-          <span class="name-line1">Hi, I'm</span>
-          <span class="name-line2">Yash Jain</span>
+        <h1 class="hero-heading">
+          <span class="hero-hi">Hi, I'm</span>
+          <span class="hero-name">Yash Jain.</span>
         </h1>
 
         <p class="hero-role">
-          I build <span class="role-typed" id="roleTyped"></span><span class="role-cursor">|</span>
+          I build <span id="roleTyped" class="typed-word"></span><span class="typed-cursor" aria-hidden="true">_</span>
         </p>
 
         <p class="hero-bio">
-          Flutter &amp; Android developer turning ideas into <strong>production-ready apps</strong> —
-          from polished UIs to GCP backends, Firebase auth, and AI integrations.
+          Flutter &amp; Android developer who ships <strong>production-ready apps</strong> —
+          cross-platform UIs, GCP cloud backends, Firebase auth, AI integrations.
         </p>
 
-        <div class="hero-btns">
-          <a href="#projects" class="btn-primary" id="hero-see-work">See My Work</a>
-          <a href="#contact"  class="btn-outline"  id="hero-contact">Get in Touch</a>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-solid" id="hero-see-work">View My Work</a>
+          <a href="#contact"  class="btn-line"  id="hero-contact">Get in Touch</a>
         </div>
 
-        <div class="hero-stats">
-          <div class="hero-stat">
+        <div class="hero-numbers">
+          <div class="hero-num">
             <strong>14</strong>
-            <span>GitHub repos</span>
+            <span>Repositories</span>
           </div>
-          <div class="hero-stat">
+          <div class="hero-divider"></div>
+          <div class="hero-num">
             <strong>1</strong>
-            <span>Hackathon win</span>
+            <span>Hackathon Win</span>
           </div>
-          <div class="hero-stat">
+          <div class="hero-divider"></div>
+          <div class="hero-num">
             <strong>2+</strong>
-            <span>Years building</span>
+            <span>Years Building</span>
           </div>
         </div>
       </div>
 
-      <div class="hero-code">
+      <!-- RIGHT -->
+      <div class="hero-right">
         <div class="code-card" id="codeCard">
-          <div class="code-header">
-            <div class="code-dots">
-              <span class="dot dot-r"></span>
-              <span class="dot dot-y"></span>
-              <span class="dot dot-g"></span>
-            </div>
-            <span class="code-filename">yash_jain.dart</span>
+          <div class="cc-titlebar">
+            <span class="cc-dot cc-dot--red"></span>
+            <span class="cc-dot cc-dot--yellow"></span>
+            <span class="cc-dot cc-dot--green"></span>
+            <span class="cc-filename">yash_jain.dart</span>
           </div>
-          <pre class="code-body"><span class="c-kw">class</span> <span class="c-cls">YashJain</span> <span class="c-kw">extends</span> <span class="c-cls">Developer</span> {
+          <pre class="cc-code"><span class="t-kw">class</span> <span class="t-type">YashJain</span> <span class="t-kw">extends</span> <span class="t-type">Developer</span> {
 
-  <span class="c-kw">final</span> name     <span class="c-op">=</span> <span class="c-str">'Yash Jain'</span>;
-  <span class="c-kw">final</span> role     <span class="c-op">=</span> <span class="c-str">'Flutter &amp; AI Dev'</span>;
-  <span class="c-kw">final</span> location <span class="c-op">=</span> <span class="c-str">'Delhi, India'</span>;
+  <span class="t-kw">final</span> name     <span class="t-op">=</span> <span class="t-str">'Yash Jain'</span>;
+  <span class="t-kw">final</span> role     <span class="t-op">=</span> <span class="t-str">'Flutter &amp; AI Dev'</span>;
+  <span class="t-kw">final</span> location <span class="t-op">=</span> <span class="t-str">'Delhi, India 🇮🇳'</span>;
 
-  <span class="c-kw">final</span> stack <span class="c-op">=</span> [
-    <span class="c-str">'Flutter'</span>, <span class="c-str">'Kotlin'</span>,
-    <span class="c-str">'Firebase'</span>, <span class="c-str">'Supabase'</span>,
-    <span class="c-str">'GCP'</span>, <span class="c-str">'Python'</span>,
+  <span class="t-kw">final</span> stack <span class="t-op">=</span> [
+    <span class="t-str">'Flutter'</span>, <span class="t-str">'Kotlin'</span>,
+    <span class="t-str">'Firebase'</span>, <span class="t-str">'Supabase'</span>,
+    <span class="t-str">'GCP'</span>, <span class="t-str">'Python'</span>,
   ];
 
-  <span class="c-fn">bool</span> get availableForHire <span class="c-op">=&gt;</span> <span class="c-kw">true</span>;
+  <span class="t-type">bool</span> get openToWork <span class="t-op">=&gt;</span> <span class="t-kw">true</span>;
 
 }</pre>
-          <div class="code-footer">
-            <span class="code-lang">Dart</span>
-            <span class="code-status">
-              <span class="status-dot"></span>
+          <div class="cc-footer">
+            <span class="cc-lang">Dart</span>
+            <span class="cc-live">
+              <span class="cc-live-dot"></span>
               Ready to build
             </span>
           </div>
         </div>
       </div>
+
     </div>
 
-    <a href="#about" class="scroll-cue" id="scrollHint" aria-label="Scroll down">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+    <a href="#about" class="scroll-arrow" id="scrollHint" aria-label="Next section">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
         <polyline points="6 9 12 15 18 9"/>
       </svg>
     </a>
   </section>
 
-  <!-- ─── ABOUT ─── -->
-  <section class="page-section" id="about">
-    <div class="section-container">
-      <div class="section-label">About</div>
-      <h2 class="section-heading">Background &amp; highlights</h2>
+  <!-- ── ABOUT ── -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-tag">About</div>
+      <h2 class="section-title">Background</h2>
 
-      <div class="about-layout">
-        <div class="about-text">
-          <p>I'm pursuing a <strong>B.Tech + M.Tech (Int.) in Computer Science</strong> at NIMS University (2022–2027), building apps that solve real problems—not homework demos.</p>
-          <p>My stack goes deep: Flutter for cross-platform UIs, Kotlin + Jetpack Compose for native Android, Supabase &amp; Firebase for backends, and GCP for cloud deployments.</p>
-          <p>At UptoSkills I grew from intern to <strong>leading a 15–20 person dev team</strong>, shipping production features and running code reviews. I won <strong>Hack2Skill PromptWars 2026</strong> with ElectWise and placed 9th nationally in Ideathon 2.0.</p>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>I'm pursuing a <strong>B.Tech + M.Tech (Int.) in Computer Science</strong> at NIMS University (2022–2027), building apps that solve real problems — not demo projects.</p>
+          <p>My stack: Flutter for cross-platform UIs, Kotlin + Jetpack Compose for native Android, Supabase &amp; Firebase for backends, GCP for deployments. I work end-to-end — from Figma to production.</p>
+          <p>At UptoSkills I went from intern to <strong>leading a 15–20 person dev team</strong>, shipping features and running code reviews. I won <strong>Hack2Skill PromptWars 2026</strong> with ElectWise and placed 9th nationally in Ideathon 2.0.</p>
 
-          <div class="highlights-grid">
-            <div class="highlight" id="callout-1">
-              <div class="highlight-title">NIMS University</div>
-              <div class="highlight-sub">B.Tech + M.Tech CSE · CGPA 7.05</div>
+          <div class="about-facts">
+            <div class="fact" id="callout-1">
+              <div class="fact-label">Education</div>
+              <div class="fact-value">NIMS University · B.Tech + M.Tech CSE</div>
+              <div class="fact-sub">2022 – 2027 · CGPA 7.05</div>
             </div>
-            <div class="highlight" id="callout-2">
-              <div class="highlight-title">Hackathon Winner</div>
-              <div class="highlight-sub">Hack2Skill PromptWars 2026</div>
+            <div class="fact" id="callout-2">
+              <div class="fact-label">Hackathon</div>
+              <div class="fact-value">Hack2Skill PromptWars 2026</div>
+              <div class="fact-sub">Winner · ElectWise</div>
             </div>
-            <div class="highlight" id="callout-3">
-              <div class="highlight-title">Intern of the Month</div>
-              <div class="highlight-sub">UptoSkills · Flutter Developer</div>
+            <div class="fact" id="callout-3">
+              <div class="fact-label">Experience</div>
+              <div class="fact-value">UptoSkills · Flutter Intern</div>
+              <div class="fact-sub">Intern of the Month · Team Lead</div>
             </div>
-            <div class="highlight" id="callout-4">
-              <div class="highlight-title">Esports IGL</div>
-              <div class="highlight-sub">Valorant team · Manipal tournament</div>
+            <div class="fact" id="callout-4">
+              <div class="fact-label">Competition</div>
+              <div class="fact-value">Ideathon 2.0 — 9th Nationally</div>
+              <div class="fact-sub">Team GRUBOX · Team Leader</div>
             </div>
           </div>
 
-          <div class="resume-row">
-            <a href="Yash_Jain_Resume (2).pdf" download class="btn-primary" id="dl-resume-1">Download Resume</a>
-            <a href="Yash_Jain_Resume__Copy__AI (1).pdf" download class="btn-outline" id="dl-resume-2">AI-Focused CV</a>
+          <div class="about-ctas">
+            <a href="Yash_Jain_Resume (2).pdf" download class="btn-solid" id="dl-resume-1">Download Resume</a>
+            <a href="Yash_Jain_Resume__Copy__AI (1).pdf" download class="btn-line"  id="dl-resume-2">AI-Focused CV</a>
           </div>
         </div>
 
-        <aside class="contact-card" id="profileCard">
-          <div class="cc-header">
-            <div class="cc-avatar">YJ</div>
-            <div>
-              <div class="cc-name">Yash Jain</div>
-              <div class="cc-role">Flutter · Android · AI</div>
+        <aside class="about-aside" id="profileCard">
+          <div class="aside-top">
+            <div class="aside-avatar">YJ</div>
+            <div class="aside-name-block">
+              <div class="aside-name">Yash Jain</div>
+              <div class="aside-role">Flutter · Android · AI</div>
             </div>
           </div>
-          <hr class="cc-divider"/>
-          <ul class="cc-details">
+
+          <ul class="aside-details">
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               Delhi, India
@@ -189,13 +195,13 @@
               <a href="tel:+919871170957">+91-9871170957</a>
             </li>
           </ul>
-          <hr class="cc-divider"/>
-          <div class="cc-socials">
-            <a href="https://github.com/Yashjain329" target="_blank" rel="noopener" class="cc-soc" id="soc-gh" aria-label="GitHub">
+
+          <div class="aside-socials">
+            <a href="https://github.com/Yashjain329" target="_blank" rel="noopener" class="aside-social" id="soc-gh">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
               GitHub
             </a>
-            <a href="https://linkedin.com/in/yash-jain329/" target="_blank" rel="noopener" class="cc-soc" id="soc-li" aria-label="LinkedIn">
+            <a href="https://linkedin.com/in/yash-jain329/" target="_blank" rel="noopener" class="aside-social" id="soc-li">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               LinkedIn
             </a>
@@ -205,86 +211,89 @@
     </div>
   </section>
 
-  <!-- ─── SKILLS ─── -->
-  <section class="page-section page-section--alt" id="skills">
-    <div class="section-container">
-      <div class="section-label">Tech Stack</div>
-      <h2 class="section-heading">What I work with</h2>
+  <!-- ── SKILLS ── -->
+  <section id="skills" class="section section--alt">
+    <div class="container">
+      <div class="section-tag">Stack</div>
+      <h2 class="section-title">What I work with</h2>
 
-      <div class="skills-grid" id="skillsBento">
+      <div class="skills-list" id="skillsBento">
 
-        <div class="skill-card skill-card--primary" id="sk-mobile">
-          <div class="skill-number">01</div>
-          <h3>Mobile Development</h3>
-          <p>Cross-platform and native apps with a focus on performance and polished UX</p>
-          <div class="skill-tags">
-            <span class="tag tag--accent">Flutter</span>
-            <span class="tag tag--accent">Dart</span>
-            <span class="tag">Kotlin</span>
-            <span class="tag">Jetpack Compose</span>
-            <span class="tag">Swift</span>
-            <span class="tag">Android Studio</span>
+        <div class="skill-row" id="sk-mobile">
+          <div class="skill-row-head">
+            <span class="skill-num">01</span>
+            <h3>Mobile Development</h3>
+            <p>Cross-platform and native apps — performance, polish, and real users</p>
+          </div>
+          <div class="skill-row-tags">
+            <span class="stag stag--hi">Flutter</span>
+            <span class="stag stag--hi">Dart</span>
+            <span class="stag stag--hi">Kotlin</span>
+            <span class="stag">Jetpack Compose</span>
+            <span class="stag">Swift</span>
+            <span class="stag">Android Studio</span>
           </div>
         </div>
 
-        <div class="skill-card" id="sk-backend">
-          <div class="skill-number">02</div>
-          <h3>Backend &amp; Databases</h3>
-          <div class="skill-tags">
-            <span class="tag tag--accent">Firebase</span>
-            <span class="tag tag--accent">Supabase</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Firestore</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">REST APIs</span>
+        <div class="skill-row" id="sk-backend">
+          <div class="skill-row-head">
+            <span class="skill-num">02</span>
+            <h3>Backend &amp; Databases</h3>
+            <p>Auth, real-time data, and REST APIs from idea to production</p>
+          </div>
+          <div class="skill-row-tags">
+            <span class="stag stag--hi">Firebase</span>
+            <span class="stag stag--hi">Supabase</span>
+            <span class="stag">PostgreSQL</span>
+            <span class="stag">Firestore</span>
+            <span class="stag">Node.js</span>
+            <span class="stag">REST APIs</span>
           </div>
         </div>
 
-        <div class="skill-card" id="sk-cloud">
-          <div class="skill-number">03</div>
-          <h3>Cloud &amp; DevOps</h3>
-          <div class="skill-tags">
-            <span class="tag tag--accent">GCP</span>
-            <span class="tag">Cloud Run</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Firebase Hosting</span>
-            <span class="tag">Git / GitHub</span>
+        <div class="skill-row" id="sk-cloud">
+          <div class="skill-row-head">
+            <span class="skill-num">03</span>
+            <h3>Cloud &amp; DevOps</h3>
+            <p>Deploying and scaling on GCP with containerized services</p>
+          </div>
+          <div class="skill-row-tags">
+            <span class="stag stag--hi">GCP</span>
+            <span class="stag stag--hi">Cloud Run</span>
+            <span class="stag">Docker</span>
+            <span class="stag">Firebase Hosting</span>
+            <span class="stag">Git / GitHub</span>
           </div>
         </div>
 
-        <div class="skill-card" id="sk-ai">
-          <div class="skill-number">04</div>
-          <h3>AI &amp; Web</h3>
-          <div class="skill-tags">
-            <span class="tag tag--accent">Python</span>
-            <span class="tag tag--accent">Gemini AI</span>
-            <span class="tag">LLM APIs</span>
-            <span class="tag">React 19</span>
-            <span class="tag">TypeScript</span>
+        <div class="skill-row" id="sk-ai">
+          <div class="skill-row-head">
+            <span class="skill-num">04</span>
+            <h3>AI &amp; Web</h3>
+            <p>LLM integrations, agents, and modern web app development</p>
+          </div>
+          <div class="skill-row-tags">
+            <span class="stag stag--hi">Python</span>
+            <span class="stag stag--hi">Gemini AI</span>
+            <span class="stag">LLM APIs</span>
+            <span class="stag">React 19</span>
+            <span class="stag">TypeScript</span>
           </div>
         </div>
 
-        <div class="skill-card" id="sk-arch">
-          <div class="skill-number">05</div>
-          <h3>Architecture</h3>
-          <div class="skill-tags">
-            <span class="tag tag--accent">MVVM</span>
-            <span class="tag">Hilt DI</span>
-            <span class="tag">Clean Architecture</span>
-            <span class="tag">OAuth</span>
-            <span class="tag">OneSignal</span>
-            <span class="tag">Google Maps</span>
+        <div class="skill-row" id="sk-arch">
+          <div class="skill-row-head">
+            <span class="skill-num">05</span>
+            <h3>Architecture &amp; Patterns</h3>
+            <p>Writing code that scales and doesn't collapse in production</p>
           </div>
-        </div>
-
-        <div class="skill-card" id="sk-soft">
-          <div class="skill-number">06</div>
-          <h3>Leadership</h3>
-          <div class="skill-tags">
-            <span class="tag tag--accent">Team Lead (15–20)</span>
-            <span class="tag">Code Review</span>
-            <span class="tag">Agile</span>
-            <span class="tag">Mentoring</span>
+          <div class="skill-row-tags">
+            <span class="stag stag--hi">MVVM</span>
+            <span class="stag stag--hi">Clean Architecture</span>
+            <span class="stag">Hilt DI</span>
+            <span class="stag">OAuth</span>
+            <span class="stag">OneSignal</span>
+            <span class="stag">Google Maps</span>
           </div>
         </div>
 
@@ -292,314 +301,331 @@
     </div>
   </section>
 
-  <!-- ─── PROJECTS ─── -->
-  <section class="page-section" id="projects">
-    <div class="section-container">
-      <div class="section-label">Work</div>
-      <h2 class="section-heading">Selected projects</h2>
-      <p class="section-sub">Production apps spanning mobile, cloud, and AI — each one solving a real problem.</p>
+  <!-- ── PROJECTS ── -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-tag">Work</div>
+      <h2 class="section-title">Selected projects</h2>
 
       <div class="proj-filter" id="projFilter">
-        <button class="flt-btn active" data-f="all"    id="flt-all">All</button>
-        <button class="flt-btn" data-f="flutter"       id="flt-flutter">Flutter</button>
-        <button class="flt-btn" data-f="android"       id="flt-android">Android</button>
-        <button class="flt-btn" data-f="ai"            id="flt-ai">AI / Web</button>
+        <button class="flt" data-f="all"     id="flt-all"     class="active">All</button>
+        <button class="flt" data-f="flutter" id="flt-flutter">Flutter</button>
+        <button class="flt" data-f="android" id="flt-android">Android</button>
+        <button class="flt" data-f="ai"      id="flt-ai">AI / Web</button>
       </div>
 
-      <div class="proj-grid" id="projGrid">
-
-        <article class="proj-card proj-featured" data-cat="ai" id="proj-electwise">
-          <div class="proj-badge">Hackathon Winner · Hack2Skill 2026</div>
-          <div class="proj-meta">
-            <span class="proj-index">01</span>
-            <span class="proj-cat">AI · Web · Civic Tech</span>
+      <!-- Featured project -->
+      <article class="proj-featured" data-cat="ai" id="proj-electwise">
+        <div class="feat-badge">Hackathon Winner — Hack2Skill PromptWars 2026</div>
+        <div class="feat-body">
+          <div class="feat-meta">
+            <span class="feat-num">01</span>
+            <span class="feat-cat">AI · Civic Tech · Web</span>
           </div>
-          <h3>ElectWise</h3>
-          <p>Full-stack civic education platform for Indian voters. Gemini 2.0 Flash AI assistant, real-time chat, quiz system, Firebase Auth &amp; Cloud Run deployment. Won Hack2Skill PromptWars 2026.</p>
-          <div class="proj-stack">
+          <h3 class="feat-title">ElectWise</h3>
+          <p class="feat-desc">Full-stack civic education platform for Indian voters. Gemini 2.0 Flash AI assistant, real-time quiz system, Firebase Auth &amp; Cloud Run deployment. Won the national hackathon.</p>
+          <div class="feat-stack">
             <span>React 19</span><span>Firebase</span><span>Gemini AI</span><span>Cloud Run</span><span>Firestore</span>
           </div>
-          <a href="https://github.com/Yashjain329/electwise" target="_blank" rel="noopener" class="proj-link" id="lnk-electwise-gh">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            View on GitHub
-          </a>
-        </article>
+        </div>
+        <a href="https://github.com/Yashjain329/electwise" target="_blank" rel="noopener" class="feat-link" id="lnk-electwise-gh">
+          View on GitHub
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </article>
 
-        <article class="proj-card" data-cat="flutter" id="proj-truck">
-          <div class="proj-meta">
-            <span class="proj-index">02</span>
+      <!-- Project grid -->
+      <div class="proj-grid" id="projGrid">
+
+        <article class="proj" data-cat="flutter" data-num="02" id="proj-truck">
+          <div class="proj-meta-row">
+            <span class="proj-num">02</span>
             <span class="proj-cat">Flutter · Logistics</span>
+            <span class="proj-stat">★ 2 &nbsp;⑂ 6</span>
           </div>
-          <h3>Truck Singh <span class="proj-stars">★ 2 · ⑂ 6</span></h3>
-          <p>Logistics management app — the most forked repo in the portfolio. Handles truck delivery operations with a clean Dart codebase.</p>
-          <div class="proj-stack"><span>Flutter</span><span>Dart</span></div>
-          <a href="https://github.com/Yashjain329/truck_singh" target="_blank" rel="noopener" class="proj-link" id="lnk-truck-gh">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            View on GitHub
-          </a>
+          <h3>Truck Singh</h3>
+          <p>Logistics management app for truck delivery operations. Most forked repo in the portfolio. Clean Dart codebase, offline-capable.</p>
+          <div class="proj-stack">
+            <span>Flutter</span><span>Dart</span>
+          </div>
+          <a href="https://github.com/Yashjain329/truck_singh" target="_blank" rel="noopener" class="proj-gh" id="lnk-truck-gh">GitHub →</a>
         </article>
 
-        <article class="proj-card" data-cat="flutter" id="proj-imgshape">
-          <div class="proj-meta">
-            <span class="proj-index">03</span>
+        <article class="proj" data-cat="flutter" data-num="03" id="proj-imgshape">
+          <div class="proj-meta-row">
+            <span class="proj-num">03</span>
             <span class="proj-cat">Flutter · Cloud AI</span>
+            <span class="proj-stat">★ 1 &nbsp;⑂ 2</span>
           </div>
-          <h3>ImgShape <span class="proj-stars">★ 1 · ⑂ 2</span></h3>
-          <p>Secure image upload app — Supabase Auth &amp; Storage, GCP Cloud Run backend for AI-powered analysis, downloadable insight reports via REST API.</p>
-          <div class="proj-stack"><span>Flutter</span><span>Supabase</span><span>GCP</span><span>REST API</span></div>
-          <a href="https://github.com/Yashjain329/imgshape" target="_blank" rel="noopener" class="proj-link" id="lnk-imgshape-gh">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            View on GitHub
-          </a>
+          <h3>ImgShape</h3>
+          <p>Secure image upload with Supabase Auth &amp; Storage. GCP Cloud Run backend for AI-powered image analysis and downloadable insight reports.</p>
+          <div class="proj-stack">
+            <span>Flutter</span><span>Supabase</span><span>GCP</span>
+          </div>
+          <a href="https://github.com/Yashjain329/imgshape" target="_blank" rel="noopener" class="proj-gh" id="lnk-imgshape-gh">GitHub →</a>
         </article>
 
-        <article class="proj-card" data-cat="flutter" id="proj-fintrackr">
-          <div class="proj-meta">
-            <span class="proj-index">04</span>
+        <article class="proj" data-cat="flutter" data-num="04" id="proj-fintrackr">
+          <div class="proj-meta-row">
+            <span class="proj-num">04</span>
             <span class="proj-cat">Flutter · Finance</span>
+            <span class="proj-stat">★ 1</span>
           </div>
-          <h3>FinTrackr <span class="proj-stars">★ 1</span></h3>
-          <p>Lightweight personal finance tracker. Daily transaction logging, spending pattern analysis, and savings goal tracking with a clean Material UI.</p>
-          <div class="proj-stack"><span>Flutter</span><span>Dart</span></div>
-          <a href="https://github.com/Yashjain329/fintrackr" target="_blank" rel="noopener" class="proj-link" id="lnk-fintrackr-gh">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            View on GitHub
-          </a>
+          <h3>FinTrackr</h3>
+          <p>Personal finance tracker — daily transaction logs, spending pattern analysis, savings goals. Clean Material UI.</p>
+          <div class="proj-stack">
+            <span>Flutter</span><span>Dart</span>
+          </div>
+          <a href="https://github.com/Yashjain329/fintrackr" target="_blank" rel="noopener" class="proj-gh" id="lnk-fintrackr-gh">GitHub →</a>
         </article>
 
-        <article class="proj-card" data-cat="flutter" id="proj-statgenie">
-          <div class="proj-meta">
-            <span class="proj-index">05</span>
+        <article class="proj" data-cat="flutter" data-num="05" id="proj-statgenie">
+          <div class="proj-meta-row">
+            <span class="proj-num">05</span>
             <span class="proj-cat">Flutter · Analytics</span>
+            <span class="proj-stat">★ 1</span>
           </div>
-          <h3>StatGenie <span class="proj-stars">★ 1</span></h3>
-          <p>Field surveyor data analysis app. Offline-first with Supabase sync, dynamic charts, categorical/numeric/date slicers.</p>
-          <div class="proj-stack"><span>Flutter</span><span>Supabase</span><span>Charts</span></div>
-          <a href="https://github.com/Yashjain329/statgenie" target="_blank" rel="noopener" class="proj-link" id="lnk-statgenie-gh">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            View on GitHub
-          </a>
+          <h3>StatGenie</h3>
+          <p>Data analysis for field surveyors. Offline-first with Supabase sync, dynamic charts, categorical, numeric, and date slicers.</p>
+          <div class="proj-stack">
+            <span>Flutter</span><span>Supabase</span><span>Charts</span>
+          </div>
+          <a href="https://github.com/Yashjain329/statgenie" target="_blank" rel="noopener" class="proj-gh" id="lnk-statgenie-gh">GitHub →</a>
         </article>
 
-        <article class="proj-card" data-cat="flutter" id="proj-shadow">
-          <div class="proj-meta">
-            <span class="proj-index">06</span>
-            <span class="proj-cat">Flutter · Messaging</span>
+        <article class="proj" data-cat="flutter" data-num="06" id="proj-shadow">
+          <div class="proj-meta-row">
+            <span class="proj-num">06</span>
+            <span class="proj-cat">Flutter · Chat</span>
+            <span class="proj-stat">★ 1</span>
           </div>
-          <h3>Shadow Talk <span class="proj-stars">★ 1</span></h3>
-          <p>Cross-platform chat app built on Flutter. Real-time messaging architecture with a clean, intuitive interface.</p>
-          <div class="proj-stack"><span>Flutter</span><span>Dart</span></div>
-          <a href="https://github.com/Yashjain329/Shadow_Talk" target="_blank" rel="noopener" class="proj-link" id="lnk-shadow-gh">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            View on GitHub
-          </a>
+          <h3>Shadow Talk</h3>
+          <p>Cross-platform chat app with real-time messaging architecture and a clean, intuitive interface built on Flutter.</p>
+          <div class="proj-stack">
+            <span>Flutter</span><span>Dart</span>
+          </div>
+          <a href="https://github.com/Yashjain329/Shadow_Talk" target="_blank" rel="noopener" class="proj-gh" id="lnk-shadow-gh">GitHub →</a>
         </article>
 
-        <article class="proj-card" data-cat="flutter" id="proj-billboard">
-          <div class="proj-meta">
-            <span class="proj-index">07</span>
-            <span class="proj-cat">Flutter · Computer Vision</span>
+        <article class="proj" data-cat="flutter" data-num="07" id="proj-billboard">
+          <div class="proj-meta-row">
+            <span class="proj-num">07</span>
+            <span class="proj-cat">Flutter · CV</span>
+            <span class="proj-stat">★ 2</span>
           </div>
-          <h3>Billboard Detector <span class="proj-stars">★ 2</span></h3>
-          <p>Detects and analyzes billboards in images or live camera feeds. Cross-platform iOS and Android using image processing techniques.</p>
-          <div class="proj-stack"><span>Flutter</span><span>ML / Image Processing</span></div>
-          <a href="https://github.com/Yashjain329/billboard_detector" target="_blank" rel="noopener" class="proj-link" id="lnk-billboard-gh">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            View on GitHub
-          </a>
+          <h3>Billboard Detector</h3>
+          <p>Real-time billboard detection in images and live camera feeds using image processing. Cross-platform iOS and Android.</p>
+          <div class="proj-stack">
+            <span>Flutter</span><span>Image Processing</span>
+          </div>
+          <a href="https://github.com/Yashjain329/billboard_detector" target="_blank" rel="noopener" class="proj-gh" id="lnk-billboard-gh">GitHub →</a>
         </article>
 
-        <article class="proj-card" data-cat="android" id="proj-anime-android">
-          <div class="proj-meta">
-            <span class="proj-index">08</span>
+        <article class="proj" data-cat="android" data-num="08" id="proj-anime-android">
+          <div class="proj-meta-row">
+            <span class="proj-num">08</span>
             <span class="proj-cat">Kotlin · Android</span>
           </div>
           <h3>AnimeExplorer</h3>
-          <p>Native Android app with Jetpack Compose, MVVM + Hilt DI, and Jikan API. Material 3 UI — trending lists, favorites, offline caching with Room.</p>
-          <div class="proj-stack"><span>Kotlin</span><span>Jetpack Compose</span><span>MVVM</span><span>Retrofit</span><span>Room</span></div>
-          <a href="https://github.com/Yashjain329/AnimeExplorer" target="_blank" rel="noopener" class="proj-link" id="lnk-anime-gh">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            View on GitHub
-          </a>
-        </article>
-
-        <article class="proj-card" data-cat="android" id="proj-sensor">
-          <div class="proj-meta">
-            <span class="proj-index">09</span>
-            <span class="proj-cat">Java · Android</span>
+          <p>Native Android with Jetpack Compose, MVVM + Hilt DI, Jikan API. Material 3 — trending lists, favorites, Room caching.</p>
+          <div class="proj-stack">
+            <span>Kotlin</span><span>Jetpack Compose</span><span>MVVM</span>
           </div>
-          <h3>Sensor Explorer <span class="proj-stars">★ 2</span></h3>
-          <p>Android app exposing all available smartphone sensors — real-time readings, maker details, max input/output values. Built with Java Fragments.</p>
-          <div class="proj-stack"><span>Java</span><span>Android</span><span>Fragments</span></div>
-          <a href="https://github.com/Yashjain329/Sensor-Explorer" target="_blank" rel="noopener" class="proj-link" id="lnk-sensor-gh">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            View on GitHub
-          </a>
+          <a href="https://github.com/Yashjain329/AnimeExplorer" target="_blank" rel="noopener" class="proj-gh" id="lnk-anime-gh">GitHub →</a>
         </article>
 
-        <article class="proj-card" data-cat="ai" id="proj-medimind">
-          <div class="proj-meta">
-            <span class="proj-index">10</span>
-            <span class="proj-cat">TypeScript · AI · Healthcare</span>
+        <article class="proj" data-cat="android" data-num="09" id="proj-sensor">
+          <div class="proj-meta-row">
+            <span class="proj-num">09</span>
+            <span class="proj-cat">Java · Android</span>
+            <span class="proj-stat">★ 2</span>
+          </div>
+          <h3>Sensor Explorer</h3>
+          <p>Shows all smartphone sensors — real-time readings, maker details, max I/O values. Built with Java Fragments.</p>
+          <div class="proj-stack">
+            <span>Java</span><span>Android</span><span>Fragments</span>
+          </div>
+          <a href="https://github.com/Yashjain329/Sensor-Explorer" target="_blank" rel="noopener" class="proj-gh" id="lnk-sensor-gh">GitHub →</a>
+        </article>
+
+        <article class="proj" data-cat="ai" data-num="10" id="proj-medimind">
+          <div class="proj-meta-row">
+            <span class="proj-num">10</span>
+            <span class="proj-cat">TypeScript · AI</span>
           </div>
           <h3>MediMind AI</h3>
-          <p>AI-powered healthcare assistant — intelligent symptom analysis, doctor–patient interaction flows, secure auth &amp; Firebase backend.</p>
-          <div class="proj-stack"><span>TypeScript</span><span>Firebase</span><span>AI APIs</span><span>Node.js</span></div>
-          <a href="https://github.com/Yashjain329/Medimind_AI" target="_blank" rel="noopener" class="proj-link" id="lnk-medimind-gh">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            View on GitHub
-          </a>
+          <p>AI-powered healthcare assistant — symptom analysis, doctor–patient interaction flows, secure auth &amp; Firebase backend.</p>
+          <div class="proj-stack">
+            <span>TypeScript</span><span>Firebase</span><span>AI APIs</span>
+          </div>
+          <a href="https://github.com/Yashjain329/Medimind_AI" target="_blank" rel="noopener" class="proj-gh" id="lnk-medimind-gh">GitHub →</a>
         </article>
 
       </div>
 
-      <div class="proj-footer-cta">
-        <a href="https://github.com/Yashjain329" target="_blank" rel="noopener" class="btn-outline" id="cta-all-repos">
-          All 14 repos on GitHub &rarr;
-        </a>
+      <div class="proj-more">
+        <a href="https://github.com/Yashjain329" target="_blank" rel="noopener" class="btn-line" id="cta-all-repos">All 14 repos on GitHub →</a>
       </div>
     </div>
   </section>
 
-  <!-- ─── EXPERIENCE ─── -->
-  <section class="page-section page-section--alt" id="experience">
-    <div class="section-container">
-      <div class="section-label">Journey</div>
-      <h2 class="section-heading">Experience &amp; milestones</h2>
+  <!-- ── EXPERIENCE ── -->
+  <section id="experience" class="section section--alt">
+    <div class="container">
+      <div class="section-tag">Journey</div>
+      <h2 class="section-title">Experience &amp; milestones</h2>
 
-      <div class="exp-layout">
-        <div class="timeline">
+      <div class="exp-grid">
+        <div class="timeline" role="list">
 
-          <div class="tl-entry" id="tl-internship">
-            <div class="tl-aside">
-              <time>Jun–Dec 2025</time>
-            </div>
-            <div class="tl-body">
-              <div class="tl-title">Flutter Developer Intern</div>
-              <div class="tl-org">UptoSkills &nbsp;·&nbsp; Delhi &nbsp;<span class="tl-tag">Intern of the Month</span></div>
-              <ul>
+          <div class="tl-row" id="tl-internship" role="listitem">
+            <div class="tl-date">Jun–Dec 2025</div>
+            <div class="tl-content">
+              <div class="tl-role">Flutter Developer Intern</div>
+              <div class="tl-where">
+                UptoSkills · Delhi
+                <span class="tl-tag">Intern of the Month</span>
+              </div>
+              <ul class="tl-list">
                 <li>Built Flutter features across multiple production app screens</li>
                 <li>Integrated PostgreSQL, OneSignal &amp; Google Maps API</li>
-                <li>Implemented OAuth and session-based auth flows</li>
-                <li>Promoted to lead a team of 15–20 developers, coordinating releases and code reviews</li>
+                <li>Implemented OAuth and session-based authentication flows</li>
+                <li><strong>Promoted to lead a team of 15–20 developers</strong> — coordinating releases and code reviews</li>
               </ul>
             </div>
           </div>
 
-          <div class="tl-entry tl-entry--win" id="tl-hack">
-            <div class="tl-aside"><time>2026</time></div>
-            <div class="tl-body">
-              <div class="tl-title">Hackathon Winner &mdash; Hack2Skill PromptWars</div>
-              <div class="tl-org">National competition</div>
-              <p>Built and shipped ElectWise — AI civic education platform powered by Gemini 2.0 Flash — winning the national hackathon.</p>
+          <div class="tl-row tl-row--win" id="tl-hack" role="listitem">
+            <div class="tl-date">2026</div>
+            <div class="tl-content">
+              <div class="tl-role">Hackathon Winner &mdash; Hack2Skill PromptWars</div>
+              <div class="tl-where">National competition</div>
+              <p>Built and shipped <strong>ElectWise</strong> — an AI civic education platform powered by Gemini 2.0 Flash — winning the national hackathon.</p>
             </div>
           </div>
 
-          <div class="tl-entry" id="tl-ideathon">
-            <div class="tl-aside"><time>National</time></div>
-            <div class="tl-body">
-              <div class="tl-title">9th Place &mdash; Ideathon 2.0</div>
-              <div class="tl-org">Team GRUBOX &nbsp;·&nbsp; Team Leader</div>
-              <p>Led Team GRUBOX in the national-level Ideathon 2.0, placing in the top 10 out of hundreds of teams.</p>
+          <div class="tl-row" id="tl-ideathon" role="listitem">
+            <div class="tl-date">National</div>
+            <div class="tl-content">
+              <div class="tl-role">9th Place &mdash; Ideathon 2.0</div>
+              <div class="tl-where">Team GRUBOX · Team Leader</div>
+              <p>Led Team GRUBOX in the national Ideathon 2.0, placing in the top 10 out of hundreds of participating teams.</p>
             </div>
           </div>
 
-          <div class="tl-entry" id="tl-edu">
-            <div class="tl-aside"><time>2022–2027</time></div>
-            <div class="tl-body">
-              <div class="tl-title">B.Tech + M.Tech (Int.) in CSE</div>
-              <div class="tl-org">NIMS University &nbsp;·&nbsp; CGPA 7.05</div>
+          <div class="tl-row" id="tl-edu" role="listitem">
+            <div class="tl-date">2022–2027</div>
+            <div class="tl-content">
+              <div class="tl-role">B.Tech + M.Tech (Int.) in CSE</div>
+              <div class="tl-where">NIMS University · CGPA 7.05</div>
               <p>Integrated dual-degree in Computer Science Engineering, specializing in mobile development, cloud, and AI systems.</p>
             </div>
           </div>
 
         </div>
 
-        <aside class="certs-aside">
+        <aside class="certs">
           <h3>Certifications</h3>
-          <ul class="cert-list">
-            <li id="cert-1"><strong>Circuit Designing &amp; TinkerCAD</strong><span>Workshop · NIMS University</span></li>
-            <li id="cert-2"><strong>MATLAB &amp; SIMULINK</strong><span>Design Tech Workshop</span></li>
-            <li id="cert-3"><strong>AI Tools &amp; ChatGPT</strong><span>Be10X Workshop</span></li>
-            <li id="cert-4"><strong>Supabase Bootcamp</strong><span>Lets Upgrade</span></li>
-            <li id="cert-5"><strong>Flutter App Development</strong><span>UptoSkills</span></li>
-            <li id="cert-6"><strong>Internship Certificate</strong><span>UptoSkills · Flutter Intern</span></li>
-          </ul>
+          <div class="cert-items">
+            <div class="cert" id="cert-1">
+              <div class="cert-name">Circuit Designing &amp; TinkerCAD</div>
+              <div class="cert-from">Workshop · NIMS University</div>
+            </div>
+            <div class="cert" id="cert-2">
+              <div class="cert-name">MATLAB &amp; SIMULINK</div>
+              <div class="cert-from">Design Tech Workshop</div>
+            </div>
+            <div class="cert" id="cert-3">
+              <div class="cert-name">AI Tools &amp; ChatGPT</div>
+              <div class="cert-from">Be10X Workshop</div>
+            </div>
+            <div class="cert" id="cert-4">
+              <div class="cert-name">Supabase Bootcamp</div>
+              <div class="cert-from">Lets Upgrade</div>
+            </div>
+            <div class="cert" id="cert-5">
+              <div class="cert-name">Flutter App Development</div>
+              <div class="cert-from">UptoSkills</div>
+            </div>
+            <div class="cert" id="cert-6">
+              <div class="cert-name">Internship Certificate</div>
+              <div class="cert-from">UptoSkills · Flutter Intern</div>
+            </div>
+          </div>
         </aside>
       </div>
     </div>
   </section>
 
-  <!-- ─── CONTACT ─── -->
-  <section class="page-section" id="contact">
-    <div class="section-container">
-      <div class="section-label">Contact</div>
-      <h2 class="section-heading">Get in touch</h2>
-      <p class="section-sub">Open to freelance projects, internships, and full-time roles. Let's build something worth building.</p>
+  <!-- ── CONTACT ── -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-tag">Contact</div>
+      <h2 class="section-title">Let's work together</h2>
+      <p class="section-desc">Open to freelance projects, internships, and full-time roles. Reach out — I respond fast.</p>
 
-      <div class="contact-layout">
-        <div class="contact-left">
-          <ul class="contact-links">
-            <li><a href="mailto:Yashjain9350@gmail.com" class="contact-link" id="info-email">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <div><label>Email</label><span>Yashjain9350@gmail.com</span></div>
-            </a></li>
-            <li><a href="tel:+919871170957" class="contact-link" id="info-phone">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18H5a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-              <div><label>Phone</label><span>+91-9871170957</span></div>
-            </a></li>
-            <li><a href="https://linkedin.com/in/yash-jain329/" target="_blank" rel="noopener" class="contact-link" id="info-linkedin">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              <div><label>LinkedIn</label><span>linkedin.com/in/yash-jain329/</span></div>
-            </a></li>
-            <li><a href="https://github.com/Yashjain329" target="_blank" rel="noopener" class="contact-link" id="info-github">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              <div><label>GitHub</label><span>github.com/Yashjain329</span></div>
-            </a></li>
-          </ul>
+      <div class="contact-grid">
 
-          <div class="resume-download">
-            <p class="resume-label">Download resume</p>
-            <div class="resume-btns">
-              <a href="Yash_Jain_Resume (2).pdf" download class="btn-primary" id="dl-gen-resume">General</a>
-              <a href="Yash_Jain_Resume__Copy__AI (1).pdf" download class="btn-outline" id="dl-ai-resume">AI-Focused</a>
+        <div class="contact-info">
+          <a href="mailto:Yashjain9350@gmail.com" class="clink" id="info-email">
+            <div class="clink-label">Email</div>
+            <div class="clink-val">Yashjain9350@gmail.com</div>
+          </a>
+          <a href="tel:+919871170957" class="clink" id="info-phone">
+            <div class="clink-label">Phone</div>
+            <div class="clink-val">+91-9871170957</div>
+          </a>
+          <a href="https://linkedin.com/in/yash-jain329/" target="_blank" rel="noopener" class="clink" id="info-linkedin">
+            <div class="clink-label">LinkedIn</div>
+            <div class="clink-val">linkedin.com/in/yash-jain329/</div>
+          </a>
+          <a href="https://github.com/Yashjain329" target="_blank" rel="noopener" class="clink" id="info-github">
+            <div class="clink-label">GitHub</div>
+            <div class="clink-val">github.com/Yashjain329</div>
+          </a>
+
+          <div class="resume-block">
+            <div class="resume-block-label">Resume</div>
+            <div class="resume-block-btns">
+              <a href="Yash_Jain_Resume (2).pdf" download class="btn-solid btn-sm" id="dl-gen-resume">General</a>
+              <a href="Yash_Jain_Resume__Copy__AI (1).pdf" download class="btn-line btn-sm" id="dl-ai-resume">AI-Focused</a>
             </div>
           </div>
         </div>
 
-        <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
-          <div class="form-row">
-            <div class="form-field">
+        <form class="cform" id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="cform-row">
+            <div class="cform-field">
               <label for="f-name">Name</label>
               <input type="text" id="f-name" name="name" placeholder="Your name" required/>
             </div>
-            <div class="form-field">
+            <div class="cform-field">
               <label for="f-email">Email</label>
               <input type="email" id="f-email" name="email" placeholder="your@email.com" required/>
             </div>
           </div>
-          <div class="form-field">
+          <div class="cform-field">
             <label for="f-subject">Subject</label>
-            <input type="text" id="f-subject" name="subject" placeholder="What's this about?"/>
+            <input type="text" id="f-subject" name="subject" placeholder="What are you working on?"/>
           </div>
-          <div class="form-field">
+          <div class="cform-field">
             <label for="f-msg">Message</label>
-            <textarea id="f-msg" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            <textarea id="f-msg" name="message" rows="5" placeholder="Tell me about the project..." required></textarea>
           </div>
-          <button type="submit" class="btn-primary btn-full" id="submitBtn">
+          <button type="submit" class="btn-solid btn-full" id="submitBtn">
             <span id="btnLabel">Send Message</span>
           </button>
-          <p class="form-success" id="formSuccess">Message sent — I'll get back to you soon.</p>
+          <p class="cform-success" id="formSuccess">Sent — I'll get back to you soon.</p>
         </form>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="site-footer">
+  <footer class="footer">
     <div class="footer-inner">
-      <span class="footer-brand">Yash Jain</span>
-      <nav class="footer-nav" aria-label="Footer">
+      <span class="footer-name">Yash Jain</span>
+      <nav class="footer-links" aria-label="Footer links">
         <a href="https://github.com/Yashjain329" target="_blank" rel="noopener" id="f-github">GitHub</a>
         <a href="https://linkedin.com/in/yash-jain329/" target="_blank" rel="noopener" id="f-linkedin">LinkedIn</a>
         <a href="mailto:Yashjain9350@gmail.com" id="f-email2">Email</a>
