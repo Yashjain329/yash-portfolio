@@ -1,21 +1,12 @@
-/* ═══════════════════════════════════════════
-   PORTFOLIO JS — Yash Jain
-═══════════════════════════════════════════ */
+/* Portfolio JS — Yash Jain */
 
-/* ── SCROLL BAR ── */
-const scrollBar = document.getElementById('scrollBar');
-window.addEventListener('scroll', () => {
-  const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
-  scrollBar.style.width = pct + '%';
-}, { passive: true });
-
-/* ── NAVBAR: sticky + hamburger ── */
+/* ── NAV: sticky + mobile menu ── */
 const nav       = document.getElementById('mainNav');
 const navMenu   = document.getElementById('navMenu');
 const hamburger = document.getElementById('navHamburger');
 
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('stuck', window.scrollY > 60);
+  nav.classList.toggle('stuck', window.scrollY > 50);
 }, { passive: true });
 
 hamburger.addEventListener('click', () => {
@@ -26,65 +17,67 @@ navMenu.querySelectorAll('.nav-link').forEach(l =>
   l.addEventListener('click', () => navMenu.classList.remove('open'))
 );
 
-/* ── CURSOR BLOB ── */
-const blob = document.getElementById('cursorBlob');
-if (window.matchMedia('(pointer:fine)').matches) {
-  document.addEventListener('mousemove', e => {
-    blob.style.left = e.clientX + 'px';
-    blob.style.top  = e.clientY + 'px';
-  });
-} else {
-  blob.style.display = 'none';
-}
-
 /* ── TYPED EFFECT ── */
 const phrases = [
-  'Flutter Apps',
-  'Android Experiences',
-  'AI-Powered Tools',
-  'Firebase Backends',
-  'GCP Deployments',
-  'Cross-Platform UIs',
+  'Flutter apps',
+  'Android experiences',
+  'AI-powered tools',
+  'Firebase backends',
+  'GCP deployments',
+  'cross-platform UIs',
 ];
-let pi = 0, ci = 0, del = false;
+let pi = 0, ci = 0, deleting = false;
 const typed = document.getElementById('roleTyped');
 
 function tick() {
-  const w = phrases[pi];
-  if (!del) {
-    typed.textContent = w.slice(0, ++ci);
-    if (ci === w.length) { del = true; setTimeout(tick, 2000); return; }
+  const word = phrases[pi];
+  if (!deleting) {
+    typed.textContent = word.slice(0, ++ci);
+    if (ci === word.length) { deleting = true; setTimeout(tick, 2000); return; }
   } else {
-    typed.textContent = w.slice(0, --ci);
-    if (ci === 0) { del = false; pi = (pi + 1) % phrases.length; }
+    typed.textContent = word.slice(0, --ci);
+    if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
   }
-  setTimeout(tick, del ? 42 : 72);
+  setTimeout(tick, deleting ? 40 : 70);
 }
 tick();
 
 /* ── SCROLL ANIMATIONS ── */
-const animEls = document.querySelectorAll('.anim, .anim-left, .anim-right');
 const io = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
+  entries.forEach(e => {
     if (e.isIntersecting) {
       const delay = +e.target.dataset.delay || 0;
       setTimeout(() => e.target.classList.add('in'), delay);
       io.unobserve(e.target);
     }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
-animEls.forEach((el, i) => {
-  if (!el.dataset.delay) el.dataset.delay = (i % 5) * 80;
-  io.observe(el);
-});
+function setupAnims() {
+  const groups = [
+    { sel: '.highlight',    stagger: 60  },
+    { sel: '.skill-card',   stagger: 50  },
+    { sel: '.proj-card',    stagger: 50  },
+    { sel: '.tl-entry',     stagger: 80  },
+    { sel: '.cert-list li', stagger: 50  },
+    { sel: '.contact-link', stagger: 40  },
+  ];
+  groups.forEach(({ sel, stagger }) => {
+    document.querySelectorAll(sel).forEach((el, i) => {
+      el.classList.add('anim');
+      el.dataset.delay = i * stagger;
+      io.observe(el);
+    });
+  });
+}
+setupAnims();
 
-/* ── ACTIVE NAV HIGHLIGHT ── */
-const sectionIds  = ['hero','about','skills','projects','experience','contact'];
-const navLinks    = document.querySelectorAll('.nav-link');
+/* ── ACTIVE NAV ── */
+const sectionIds = ['hero', 'about', 'skills', 'projects', 'experience', 'contact'];
+const navLinks   = document.querySelectorAll('.nav-link');
 
-function updateActiveNav() {
-  const mid = window.scrollY + window.innerHeight / 2;
+function updateNav() {
+  const mid = window.scrollY + window.innerHeight * 0.4;
   sectionIds.forEach(id => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -95,35 +88,26 @@ function updateActiveNav() {
     }
   });
 }
-window.addEventListener('scroll', updateActiveNav, { passive: true });
-updateActiveNav();
+window.addEventListener('scroll', updateNav, { passive: true });
+updateNav();
 
 /* ── PROJECT FILTER ── */
-const filterBtns  = document.querySelectorAll('.flt-btn');
-const projCards   = document.querySelectorAll('.proj-card');
-
-filterBtns.forEach(btn => {
+document.querySelectorAll('.flt-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.flt-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const f = btn.dataset.f;
-
-    projCards.forEach(c => {
-      const match = f === 'all' || c.dataset.cat === f;
-      c.classList.toggle('proj-hidden', !match);
+    document.querySelectorAll('.proj-card').forEach(c => {
+      c.classList.toggle('proj-hidden', f !== 'all' && c.dataset.cat !== f);
     });
   });
 });
 
-/* ── SMOOTH SCROLL for anchor links ── */
+/* ── SMOOTH SCROLL ── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
-    const id = a.getAttribute('href').slice(1);
-    const target = document.getElementById(id);
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    const target = document.getElementById(a.getAttribute('href').slice(1));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
   });
 });
 
@@ -133,43 +117,13 @@ function handleSubmit(e) {
   const btn  = document.getElementById('submitBtn');
   const lbl  = document.getElementById('btnLabel');
   const succ = document.getElementById('formSuccess');
-
   btn.disabled = true;
   lbl.textContent = 'Sending…';
-
-  // Simulate — replace with EmailJS / Formspree in production
   setTimeout(() => {
-    lbl.textContent = '✅ Sent!';
+    lbl.textContent = 'Send Message';
     succ.style.display = 'block';
+    btn.disabled = false;
     e.target.reset();
-    setTimeout(() => {
-      btn.disabled = false;
-      lbl.textContent = 'Send Message';
-      succ.style.display = 'none';
-    }, 4500);
-  }, 1200);
+    setTimeout(() => { succ.style.display = 'none'; }, 5000);
+  }, 1000);
 }
-
-/* ── ADD ANIM CLASSES TO KEY ELEMENTS ── */
-function setupAnims() {
-  const targets = [
-    { sel: '.callout',     cls: 'anim',       stagger: 90 },
-    { sel: '.bento-card',  cls: 'anim',       stagger: 80 },
-    { sel: '.proj-card',   cls: 'anim',       stagger: 60 },
-    { sel: '.tl-card',     cls: 'anim-left',  stagger: 100 },
-    { sel: '.cert-item',   cls: 'anim',       stagger: 70 },
-    { sel: '.info-card',   cls: 'anim',       stagger: 80 },
-    { sel: '.about-text-col', cls: 'anim-left', stagger: 0 },
-    { sel: '.about-card-col', cls: 'anim-right', stagger: 100 },
-  ];
-  targets.forEach(({ sel, cls, stagger }) => {
-    document.querySelectorAll(sel).forEach((el, i) => {
-      if (!el.classList.contains('anim') && !el.classList.contains('anim-left') && !el.classList.contains('anim-right')) {
-        el.classList.add(cls);
-        el.dataset.delay = i * stagger;
-        io.observe(el);
-      }
-    });
-  });
-}
-setupAnims();
