@@ -262,21 +262,67 @@ button { cursor: pointer; font-family: var(--font-h); }
 }
 .exp-item p { font-family: var(--font-b); font-size: .82rem; color: rgba(255,255,255,.45); line-height: 1.65; margin-top: 4px; }
 
+/* ── ABOUT RIGHT: FLOATING SKILL BUBBLES ── */
 .about-right {
-  display: flex; flex-direction: column; gap: 28px;
-  border-left: 1px solid var(--border); padding-left: 6vw;
-  overflow-y: auto; align-self: start;
+  position: relative;
+  overflow: hidden;
+  border-left: 1px solid var(--border);
 }
-.about-right::-webkit-scrollbar { display: none; }
 
-.stack-block {}
-.stack-label {
-  font-family: var(--font-m); font-size: .6rem; font-weight: 600;
-  letter-spacing: .16em; color: var(--muted); margin-bottom: 6px;
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.14);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 18px;
+  cursor: default;
+  transition: border-color .3s, background .3s;
 }
-.stack-items {
-  font-family: var(--font-h); font-size: clamp(.85rem, 1.1vw, .95rem);
-  color: var(--white); line-height: 1.6;
+.bubble:hover {
+  border-color: rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.04);
+}
+
+.bub-label {
+  font-family: var(--font-m); font-size: .58rem; font-weight: 600;
+  letter-spacing: .18em; color: var(--muted);
+  text-transform: uppercase; margin-bottom: 6px;
+}
+.bub-tech {
+  font-family: var(--font-h); font-size: .78rem; color: var(--white);
+  line-height: 1.5;
+}
+
+/* Bubble sizes and starting positions */
+.b-mobile  { width: 190px; height: 190px; top:  4%; left:  4%; animation: drift1 9s  ease-in-out infinite;       }
+.b-backend { width: 158px; height: 158px; top: 10%; left: 52%; animation: drift2 11s ease-in-out infinite   1s;   }
+.b-cloud   { width: 140px; height: 140px; top: 54%; left: 58%; animation: drift3 8s  ease-in-out infinite   0.5s; }
+.b-ai      { width: 168px; height: 168px; top: 52%; left:  8%; animation: drift4 10s ease-in-out infinite   1.5s; }
+
+@keyframes drift1 {
+  0%,100% { transform: translate(0,     0);    }
+  25%     { transform: translate(18px, -22px); }
+  50%     { transform: translate(-8px, -36px); }
+  75%     { transform: translate(-22px, 10px); }
+}
+@keyframes drift2 {
+  0%,100% { transform: translate(0,    0);     }
+  25%     { transform: translate(-20px, 18px); }
+  50%     { transform: translate(12px,  30px); }
+  75%     { transform: translate(24px, -12px); }
+}
+@keyframes drift3 {
+  0%,100% { transform: translate(0,     0);    }
+  25%     { transform: translate(-14px, 20px); }
+  50%     { transform: translate(20px,  14px); }
+  75%     { transform: translate(10px, -20px); }
+}
+@keyframes drift4 {
+  0%,100% { transform: translate(0,    0);     }
+  25%     { transform: translate(22px, -14px); }
+  50%     { transform: translate(-14px, 20px); }
+  75%     { transform: translate(-20px,-8px);  }
 }
 
 /* ── CONTACT SECTION ── */
@@ -361,6 +407,69 @@ button { cursor: pointer; font-family: var(--font-h); }
 }
 .sec-dot.active { background: var(--white); transform: scale(1.5); }
 
+/* ── PHONE WIREFRAME (p1 center) ── */
+.sec-center {
+  position: absolute; inset: 0; z-index: 5;
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none;
+}
+
+.phone-wire {
+  height: min(60vh, 340px); width: auto;
+  filter: drop-shadow(0 0 30px rgba(167,139,250,0.12));
+  animation: phoneFloat 7s ease-in-out infinite;
+  transform-origin: center;
+}
+@keyframes phoneFloat {
+  0%,100% { transform: translateY(0)     rotate(0deg);   }
+  33%     { transform: translateY(-14px)  rotate(2.5deg);  }
+  66%     { transform: translateY(8px)    rotate(-2deg);  }
+}
+
+/* ── NETWORK DIAGRAM (p2 center) ── */
+.net-svg {
+  width: min(70vw, 560px); height: auto;
+  animation: netSpin 60s linear infinite;
+}
+@keyframes netSpin {
+  from { transform: rotate(0deg);   }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── ACHIEVEMENT STATS (p3 center) ── */
+.stats-viz {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 0;
+  text-align: center;
+}
+.sv-row {
+  display: flex; align-items: center; gap: 48px;
+  padding: 28px 48px;
+}
+.sv-sep {
+  width: 1px; height: 60px;
+  background: rgba(255,255,255,0.1);
+}
+.sv-divider {
+  width: 240px; height: 1px;
+  background: rgba(255,255,255,0.08);
+}
+.sv-item {
+  display: flex; flex-direction: column; gap: 8px;
+  min-width: 100px;
+}
+.sv-num {
+  font-family: var(--font-h); font-weight: 800;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: var(--white); line-height: 1; letter-spacing: -.03em;
+  display: block;
+}
+.sv-lab {
+  font-family: var(--font-m); font-size: .62rem;
+  color: var(--muted); text-transform: uppercase; letter-spacing: .14em;
+  display: block;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .fnav { top: 14px; right: 14px; }
@@ -371,7 +480,16 @@ button { cursor: pointer; font-family: var(--font-h); }
   .proj-row { gap: 10px; }
 
   .about-split { grid-template-columns: 1fr; }
-  .about-right { border-left: none; padding-left: 0; border-top: 1px solid var(--border); padding-top: 24px; }
+  .about-right {
+    border-left: none; padding-left: 0;
+    border-top: 1px solid var(--border);
+    height: 280px;
+    min-height: 280px;
+  }
+  .b-mobile  { top:  5%; left:  5%; }
+  .b-backend { top: 10%; left: 46%; width: 130px; height: 130px; }
+  .b-cloud   { top: 52%; left: 52%; width: 116px; height: 116px; }
+  .b-ai      { top: 50%; left:  8%; width: 138px; height: 138px; }
 
   .contact-body { grid-template-columns: 1fr; }
 
