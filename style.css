@@ -81,7 +81,7 @@ button { cursor: pointer; font-family: var(--font-h); }
 
 /* ── SCROLLER ── */
 .scroller {
-  width: 100%; height: 100%;
+  width: 100%; height: 100vh; height: 100dvh;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
@@ -93,7 +93,9 @@ button { cursor: pointer; font-family: var(--font-h); }
 /* ── SNAP SECTION ── */
 .snap-sec {
   position: relative;
-  width: 100%; height: 100vh;
+  width: 100%;
+  height: 100vh;     /* fallback */
+  height: 100dvh;    /* mobile dynamic toolbar fix */
   scroll-snap-align: start;
   scroll-snap-stop: always;
   overflow: hidden;
@@ -182,9 +184,12 @@ button { cursor: pointer; font-family: var(--font-h); }
 
 .focal-center {
   position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
   gap: 8px; text-align: center;
+  white-space: nowrap;
 }
 .focal-init {
   font-family: var(--font-h); font-weight: 900;
@@ -508,47 +513,146 @@ button { cursor: pointer; font-family: var(--font-h); }
   display: block;
 }
 
-/* ── RESPONSIVE ── */
+/* ══════════════════════════════
+   RESPONSIVE — TABLET (max 900px)
+   ══════════════════════════════ */
 @media (max-width: 900px) {
+  /* Nav */
   .fnav { top: 14px; right: 14px; }
   .fnav-link { padding: 7px 14px; font-size: .72rem; }
 
-  .proj-row { grid-template-columns: 30px 1fr 100px 60px; }
+  /* Work */
+  .proj-row { grid-template-columns: 30px 1fr 120px 60px; gap: 10px; }
   .pr-stack, .pr-arrow { display: none; }
-  .proj-row { gap: 10px; }
 
-  .about-split { grid-template-columns: 1fr; }
+  /* About */
+  .about-split { grid-template-columns: 1fr; gap: 0; }
   .about-right {
     border-left: none; padding-left: 0;
     border-top: 1px solid var(--border);
-    height: 280px;
-    min-height: 280px;
+    height: 260px; min-height: 260px;
   }
-  .b-mobile  { top:  5%; left:  5%; }
-  .b-backend { top: 10%; left: 46%; width: 130px; height: 130px; }
-  .b-cloud   { top: 52%; left: 52%; width: 116px; height: 116px; }
-  .b-ai      { top: 50%; left:  8%; width: 138px; height: 138px; }
+  .b-mobile  { width: 160px; height: 160px; top:  4%; left:  4%; }
+  .b-backend { width: 130px; height: 130px; top:  8%; left: 50%; }
+  .b-cloud   { width: 115px; height: 115px; top: 52%; left: 54%; }
+  .b-ai      { width: 140px; height: 140px; top: 50%; left:  6%; }
 
-  .contact-body { grid-template-columns: 1fr; }
+  /* Contact */
+  .contact-body { grid-template-columns: 1fr; gap: 24px; }
 
-  .bt-headline { font-size: clamp(1.8rem, 6vw, 3rem); }
+  /* Type */
+  .bt-headline { font-size: clamp(1.8rem, 5vw, 3rem); }
 }
 
-@media (max-width: 600px) {
-  .corner-name { font-size: 1.1rem; }
-  .bt-headline { font-size: clamp(1.6rem, 7vw, 2.5rem); }
-  .corner-quote { max-width: 85vw; }
-
-  .proj-row { grid-template-columns: 28px 1fr 60px; gap: 8px; }
-  .pr-cat, .pr-badge { display: none; }
-  .proj-row:last-child { display: none; }
-
-  .fnav { left: 14px; right: 14px; top: 14px; justify-content: center; }
-
-  .cform-row { grid-template-columns: 1fr; }
-
-  .about-split {
-    top: calc(6vh + clamp(1.4rem, 3vw, 2.2rem) + 30px);
-    gap: 24px;
+/* ══════════════════════════════
+   RESPONSIVE — MOBILE (max 768px)
+   ══════════════════════════════ */
+@media (max-width: 768px) {
+  /* ---- Nav: centred pill ---- */
+  .fnav {
+    top: 14px;
+    left: 50%; right: auto;
+    transform: translateX(-50%);
+    padding: 5px;
   }
+  .fnav-link { padding: 7px 14px; font-size: .72rem; }
+
+  /* ---- Hero ---- */
+  .corner-name  { font-size: clamp(1.1rem, 3.5vw, 1.5rem); top: 5vh; }
+  .corner-sub   { font-size: .6rem; margin-top: 5px; }
+  .corner-quote { top: 14vh; max-width: 80vw; font-size: .85rem; }
+  .bottom-text  { bottom: 8vh; }
+  .bt-headline  { font-size: clamp(1.6rem, 6vw, 2.5rem); }
+  .bt-caption   { font-size: .8rem; margin-bottom: 10px; }
+
+  /* Smaller ring so it doesn’t clash with corner text / bottom headline */
+  .focal-ring   { width: min(46vmin, 210px); height: min(46vmin, 210px); }
+  .focal-init   { font-size: clamp(2rem, 8vmin, 3rem); }
+  .focal-sub    { font-size: .52rem; }
+
+  /* ---- Work ---- */
+  .work-grid {
+    padding: 0 4vw;
+    padding-top: calc(5vh + 2rem + 52px);
+  }
+  .proj-row     { grid-template-columns: 26px 1fr 90px; gap: 10px; padding: 9px 0; }
+  .pr-stack     { display: none; }
+  .pr-arrow     { display: none; }
+  .pr-badge     { font-size: .6rem; }
+  .proj-row--feat { padding: 12px; }
+  .all-repos    { font-size: .65rem; }
+
+  /* ---- About ---- */
+  .about-split {
+    top: calc(5vh + 2rem + 38px);
+    bottom: 4vh;
+    gap: 0;
+    grid-template-columns: 1fr;
+  }
+  .about-left { gap: 20px; }
+  .exp-item p { font-size: .78rem; }
+  .about-right {
+    border-left: none; padding-left: 0;
+    border-top: 1px solid var(--border);
+    height: 240px; min-height: 240px;
+  }
+  .b-mobile  { width: 140px; height: 140px; top:  4%; left:  3%; }
+  .b-backend { width: 115px; height: 115px; top:  8%; left: 52%; }
+  .b-cloud   { width: 105px; height: 105px; top: 52%; left: 56%; }
+  .b-ai      { width: 125px; height: 125px; top: 50%; left:  5%; }
+  .bub-label { font-size: .52rem; }
+  .bub-tech  { font-size: .68rem; }
+
+  /* ---- Contact ---- */
+  .contact-body {
+    top: calc(5vh + 2rem + 38px);
+    grid-template-columns: 1fr;
+    gap: 20px;
+    overflow-y: auto;
+  }
+  .clink { grid-template-columns: 70px 1fr; padding: 10px 0; }
+  .cform-row { grid-template-columns: 1fr; }
+  .footer-line { bottom: 2vh; font-size: .58rem; }
+
+  /* ---- p2 network svg ---- */
+  .net-svg { width: min(88vw, 380px); }
+
+  /* ---- p3 stats ---- */
+  .sv-row { gap: 24px; padding: 18px 24px; }
+  .sv-num { font-size: clamp(2rem, 8vw, 3rem); }
+}
+
+/* ══════════════════════════════
+   RESPONSIVE — SMALL PHONE (max 480px)
+   ══════════════════════════════ */
+@media (max-width: 480px) {
+  /* Nav even tighter */
+  .fnav-link { padding: 6px 10px; font-size: .68rem; }
+
+  /* Hero */
+  .focal-ring { width: min(42vmin, 180px); height: min(42vmin, 180px); }
+  .focal-init { font-size: clamp(1.8rem, 9vmin, 2.5rem); }
+  .bottom-text { bottom: 10vh; }
+  .bt-headline { font-size: clamp(1.4rem, 7vw, 2rem); }
+  .bt-caption  { display: none; } /* too cramped on small screens */
+
+  /* Work */
+  .proj-row { grid-template-columns: 24px 1fr; gap: 8px; }
+  .pr-cat   { display: none; }
+  .pr-badge { display: none; }
+
+  /* About bubbles — even smaller */
+  .b-mobile  { width: 120px; height: 120px; }
+  .b-backend { width: 100px; height: 100px; }
+  .b-cloud   { width:  94px; height:  94px; }
+  .b-ai      { width: 108px; height: 108px; }
+
+  /* Stats — stack vertically */
+  .sv-row     { flex-direction: column; gap: 12px; padding: 12px 0; }
+  .sv-sep     { width: 60px; height: 1px; }
+  .sv-divider { display: none; }
+
+  /* Contact */
+  .clink { grid-template-columns: 60px 1fr; gap: 8px; }
+  .cl-val { font-size: .78rem; }
 }
