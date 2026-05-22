@@ -3,636 +3,315 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Yash Jain — Flutter & AI Developer</title>
-  <meta name="description" content="Yash Jain — Flutter, Android & AI developer. Building production-ready mobile apps with Dart, Kotlin, Firebase & Supabase."/>
-  <meta property="og:title" content="Yash Jain — Flutter & AI Developer"/>
-  <meta property="og:description" content="Mobile & AI developer building real-world apps with Flutter, Kotlin, Firebase, and GCP."/>
+  <title>Yash Jain | Flutter & AI Developer</title>
+  <meta name="description" content="Flutter & Android developer building production-ready mobile apps, AI integrations, and cloud backends."/>
+  <meta property="og:title" content="Yash Jain | Flutter & AI Developer"/>
   <meta property="og:type" content="website"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="nav" id="mainNav">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo" id="nav-brand">Yash Jain</a>
-
-      <ul class="nav-links" id="navMenu" role="list">
-        <li><a href="#about"      class="nav-link" data-section="about">About</a></li>
-        <li><a href="#skills"     class="nav-link" data-section="skills">Skills</a></li>
-        <li><a href="#projects"   class="nav-link" data-section="projects">Projects</a></li>
-        <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
-        <li><a href="#contact"    class="nav-link" data-section="contact">Contact</a></li>
-      </ul>
-
-      <div class="nav-end">
-        <a href="Yash_Jain_Resume (2).pdf" download class="nav-resume" id="nav-resume-btn">
-          Resume
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        </a>
-        <button class="hamburger" id="navHamburger" aria-label="Toggle menu">
-          <span></span><span></span>
-        </button>
-      </div>
+  <!-- ── INTRO OVERLAY ── -->
+  <div id="intro" class="intro">
+    <div id="introText" class="intro-text">
+      <span class="il">H</span><span class="il">i</span><span class="il">,</span><span class="il"> </span><span class="il">Y</span><span class="il">a</span><span class="il">s</span><span class="il">h</span><span class="il"> </span><span class="il">H</span><span class="il">e</span><span class="il">r</span><span class="il">e</span>
     </div>
+  </div>
+
+  <!-- ── FLOATING NAV ── -->
+  <nav id="mainNav" class="fnav">
+    <a href="#home"       class="fnav-link active" data-s="home">Home</a>
+    <a href="#work"       class="fnav-link"         data-s="work">Work</a>
+    <a href="#about"      class="fnav-link"         data-s="about">About</a>
+    <a href="#contact"    class="fnav-link"         data-s="contact">Contact</a>
   </nav>
 
-  <!-- ── HERO ── -->
-  <section id="hero" class="hero">
-    <div class="hero-wrap">
+  <!-- ── MAIN SCROLL CONTAINER ── -->
+  <main id="scroller" class="scroller">
 
-      <!-- LEFT -->
-      <div class="hero-left">
-        <div class="hero-status">
-          <span class="status-light"></span>
-          Available for opportunities
-        </div>
-
-        <h1 class="hero-heading">
-          <span class="hero-hi">Hi, I'm</span>
-          <span class="hero-name">Yash Jain.</span>
-        </h1>
-
-        <p class="hero-role">
-          I build <span id="roleTyped" class="typed-word"></span><span class="typed-cursor" aria-hidden="true">_</span>
-        </p>
-
-        <p class="hero-bio">
-          Flutter &amp; Android developer who ships <strong>production-ready apps</strong> —
-          cross-platform UIs, GCP cloud backends, Firebase auth, AI integrations.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#projects" class="btn-solid" id="hero-see-work">View My Work</a>
-          <a href="#contact"  class="btn-line"  id="hero-contact">Get in Touch</a>
-        </div>
-
-        <div class="hero-numbers">
-          <div class="hero-num">
-            <strong>14</strong>
-            <span>Repositories</span>
-          </div>
-          <div class="hero-divider"></div>
-          <div class="hero-num">
-            <strong>1</strong>
-            <span>Hackathon Win</span>
-          </div>
-          <div class="hero-divider"></div>
-          <div class="hero-num">
-            <strong>2+</strong>
-            <span>Years Building</span>
-          </div>
-        </div>
+    <!-- SECTION 1: HERO -->
+    <section class="snap-sec" id="home">
+      <div class="corner-name">
+        YASH JAIN<br/>
+        <span class="corner-sub">Flutter · Android · AI</span>
       </div>
 
-      <!-- RIGHT -->
-      <div class="hero-right">
-        <div class="code-card" id="codeCard">
-          <div class="cc-titlebar">
-            <span class="cc-dot cc-dot--red"></span>
-            <span class="cc-dot cc-dot--yellow"></span>
-            <span class="cc-dot cc-dot--green"></span>
-            <span class="cc-filename">yash_jain.dart</span>
-          </div>
-          <pre class="cc-code"><span class="t-kw">class</span> <span class="t-type">YashJain</span> <span class="t-kw">extends</span> <span class="t-type">Developer</span> {
-
-  <span class="t-kw">final</span> name     <span class="t-op">=</span> <span class="t-str">'Yash Jain'</span>;
-  <span class="t-kw">final</span> role     <span class="t-op">=</span> <span class="t-str">'Flutter &amp; AI Dev'</span>;
-  <span class="t-kw">final</span> location <span class="t-op">=</span> <span class="t-str">'Delhi, India 🇮🇳'</span>;
-
-  <span class="t-kw">final</span> stack <span class="t-op">=</span> [
-    <span class="t-str">'Flutter'</span>, <span class="t-str">'Kotlin'</span>,
-    <span class="t-str">'Firebase'</span>, <span class="t-str">'Supabase'</span>,
-    <span class="t-str">'GCP'</span>, <span class="t-str">'Python'</span>,
-  ];
-
-  <span class="t-type">bool</span> get openToWork <span class="t-op">=&gt;</span> <span class="t-kw">true</span>;
-
-}</pre>
-          <div class="cc-footer">
-            <span class="cc-lang">Dart</span>
-            <span class="cc-live">
-              <span class="cc-live-dot"></span>
-              Ready to build
-            </span>
-          </div>
-        </div>
+      <div class="center-visual" id="heroVisual">
+        <!-- Particle canvas -->
+        <canvas id="heroCanvas"></canvas>
       </div>
 
-    </div>
-
-    <a href="#about" class="scroll-arrow" id="scrollHint" aria-label="Next section">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-        <polyline points="6 9 12 15 18 9"/>
-      </svg>
-    </a>
-  </section>
-
-  <!-- ── ABOUT ── -->
-  <section id="about" class="section">
-    <div class="container">
-      <div class="section-tag">About</div>
-      <h2 class="section-title">Background</h2>
-
-      <div class="about-grid">
-        <div class="about-copy">
-          <p>I'm pursuing a <strong>B.Tech + M.Tech (Int.) in Computer Science</strong> at NIMS University (2022–2027), building apps that solve real problems — not demo projects.</p>
-          <p>My stack: Flutter for cross-platform UIs, Kotlin + Jetpack Compose for native Android, Supabase &amp; Firebase for backends, GCP for deployments. I work end-to-end — from Figma to production.</p>
-          <p>At UptoSkills I went from intern to <strong>leading a 15–20 person dev team</strong>, shipping features and running code reviews. I won <strong>Hack2Skill PromptWars 2026</strong> with ElectWise and placed 9th nationally in Ideathon 2.0.</p>
-
-          <div class="about-facts">
-            <div class="fact" id="callout-1">
-              <div class="fact-label">Education</div>
-              <div class="fact-value">NIMS University · B.Tech + M.Tech CSE</div>
-              <div class="fact-sub">2022 – 2027 · CGPA 7.05</div>
-            </div>
-            <div class="fact" id="callout-2">
-              <div class="fact-label">Hackathon</div>
-              <div class="fact-value">Hack2Skill PromptWars 2026</div>
-              <div class="fact-sub">Winner · ElectWise</div>
-            </div>
-            <div class="fact" id="callout-3">
-              <div class="fact-label">Experience</div>
-              <div class="fact-value">UptoSkills · Flutter Intern</div>
-              <div class="fact-sub">Intern of the Month · Team Lead</div>
-            </div>
-            <div class="fact" id="callout-4">
-              <div class="fact-label">Competition</div>
-              <div class="fact-value">Ideathon 2.0 — 9th Nationally</div>
-              <div class="fact-sub">Team GRUBOX · Team Leader</div>
-            </div>
-          </div>
-
-          <div class="about-ctas">
-            <a href="Yash_Jain_Resume (2).pdf" download class="btn-solid" id="dl-resume-1">Download Resume</a>
-            <a href="Yash_Jain_Resume__Copy__AI (1).pdf" download class="btn-line"  id="dl-resume-2">AI-Focused CV</a>
-          </div>
-        </div>
-
-        <aside class="about-aside" id="profileCard">
-          <div class="aside-top">
-            <div class="aside-avatar">YJ</div>
-            <div class="aside-name-block">
-              <div class="aside-name">Yash Jain</div>
-              <div class="aside-role">Flutter · Android · AI</div>
-            </div>
-          </div>
-
-          <ul class="aside-details">
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Delhi, India
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <a href="mailto:Yashjain9350@gmail.com">Yashjain9350@gmail.com</a>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18H5a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-              <a href="tel:+919871170957">+91-9871170957</a>
-            </li>
-          </ul>
-
-          <div class="aside-socials">
-            <a href="https://github.com/Yashjain329" target="_blank" rel="noopener" class="aside-social" id="soc-gh">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              GitHub
-            </a>
-            <a href="https://linkedin.com/in/yash-jain329/" target="_blank" rel="noopener" class="aside-social" id="soc-li">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              LinkedIn
-            </a>
-          </div>
-        </aside>
+      <div class="bottom-text bottom-text--right">
+        <p class="bt-caption">Building apps from zero to production —<br/>mobile, cloud, and AI.</p>
+        <h2 class="bt-headline">Perceive. Build. Ship.</h2>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ── SKILLS ── -->
-  <section id="skills" class="section section--alt">
-    <div class="container">
-      <div class="section-tag">Stack</div>
-      <h2 class="section-title">What I work with</h2>
-
-      <div class="skills-list" id="skillsBento">
-
-        <div class="skill-row" id="sk-mobile">
-          <div class="skill-row-head">
-            <span class="skill-num">01</span>
-            <h3>Mobile Development</h3>
-            <p>Cross-platform and native apps — performance, polish, and real users</p>
-          </div>
-          <div class="skill-row-tags">
-            <span class="stag stag--hi">Flutter</span>
-            <span class="stag stag--hi">Dart</span>
-            <span class="stag stag--hi">Kotlin</span>
-            <span class="stag">Jetpack Compose</span>
-            <span class="stag">Swift</span>
-            <span class="stag">Android Studio</span>
-          </div>
-        </div>
-
-        <div class="skill-row" id="sk-backend">
-          <div class="skill-row-head">
-            <span class="skill-num">02</span>
-            <h3>Backend &amp; Databases</h3>
-            <p>Auth, real-time data, and REST APIs from idea to production</p>
-          </div>
-          <div class="skill-row-tags">
-            <span class="stag stag--hi">Firebase</span>
-            <span class="stag stag--hi">Supabase</span>
-            <span class="stag">PostgreSQL</span>
-            <span class="stag">Firestore</span>
-            <span class="stag">Node.js</span>
-            <span class="stag">REST APIs</span>
-          </div>
-        </div>
-
-        <div class="skill-row" id="sk-cloud">
-          <div class="skill-row-head">
-            <span class="skill-num">03</span>
-            <h3>Cloud &amp; DevOps</h3>
-            <p>Deploying and scaling on GCP with containerized services</p>
-          </div>
-          <div class="skill-row-tags">
-            <span class="stag stag--hi">GCP</span>
-            <span class="stag stag--hi">Cloud Run</span>
-            <span class="stag">Docker</span>
-            <span class="stag">Firebase Hosting</span>
-            <span class="stag">Git / GitHub</span>
-          </div>
-        </div>
-
-        <div class="skill-row" id="sk-ai">
-          <div class="skill-row-head">
-            <span class="skill-num">04</span>
-            <h3>AI &amp; Web</h3>
-            <p>LLM integrations, agents, and modern web app development</p>
-          </div>
-          <div class="skill-row-tags">
-            <span class="stag stag--hi">Python</span>
-            <span class="stag stag--hi">Gemini AI</span>
-            <span class="stag">LLM APIs</span>
-            <span class="stag">React 19</span>
-            <span class="stag">TypeScript</span>
-          </div>
-        </div>
-
-        <div class="skill-row" id="sk-arch">
-          <div class="skill-row-head">
-            <span class="skill-num">05</span>
-            <h3>Architecture &amp; Patterns</h3>
-            <p>Writing code that scales and doesn't collapse in production</p>
-          </div>
-          <div class="skill-row-tags">
-            <span class="stag stag--hi">MVVM</span>
-            <span class="stag stag--hi">Clean Architecture</span>
-            <span class="stag">Hilt DI</span>
-            <span class="stag">OAuth</span>
-            <span class="stag">OneSignal</span>
-            <span class="stag">Google Maps</span>
-          </div>
-        </div>
-
+    <!-- SECTION 2: PHILOSOPHY 1 -->
+    <section class="snap-sec" id="p1">
+      <div class="corner-quote corner-quote--left">
+        <strong>Apps that solve real problems.</strong><br/>
+        Not demos. Not homework. Real users, real impact.
       </div>
-    </div>
-  </section>
+      <div class="bottom-text bottom-text--right">
+        <h2 class="bt-headline">Code is the<br/>easy part.</h2>
+      </div>
+    </section>
 
-  <!-- ── PROJECTS ── -->
-  <section id="projects" class="section">
-    <div class="container">
-      <div class="section-tag">Work</div>
-      <h2 class="section-title">Selected projects</h2>
+    <!-- SECTION 3: PHILOSOPHY 2 -->
+    <section class="snap-sec" id="p2">
+      <div class="corner-quote corner-quote--right">
+        From Flutter UI to GCP backend in the same sprint.<br/>
+        <strong>Full-stack mobile development.</strong>
+      </div>
+      <div class="bottom-text bottom-text--left">
+        <h2 class="bt-headline">One dev.<br/>Full stack.</h2>
+      </div>
+    </section>
 
-      <div class="proj-filter" id="projFilter">
-        <button class="flt" data-f="all"     id="flt-all"     class="active">All</button>
-        <button class="flt" data-f="flutter" id="flt-flutter">Flutter</button>
-        <button class="flt" data-f="android" id="flt-android">Android</button>
-        <button class="flt" data-f="ai"      id="flt-ai">AI / Web</button>
+    <!-- SECTION 4: WORK -->
+    <section class="snap-sec" id="work">
+      <div class="corner-name">
+        SELECTED WORK
+        <span class="corner-sub">10 projects · 14 repos</span>
       </div>
 
-      <!-- Featured project -->
-      <article class="proj-featured" data-cat="ai" id="proj-electwise">
-        <div class="feat-badge">Hackathon Winner — Hack2Skill PromptWars 2026</div>
-        <div class="feat-body">
-          <div class="feat-meta">
-            <span class="feat-num">01</span>
-            <span class="feat-cat">AI · Civic Tech · Web</span>
-          </div>
-          <h3 class="feat-title">ElectWise</h3>
-          <p class="feat-desc">Full-stack civic education platform for Indian voters. Gemini 2.0 Flash AI assistant, real-time quiz system, Firebase Auth &amp; Cloud Run deployment. Won the national hackathon.</p>
-          <div class="feat-stack">
-            <span>React 19</span><span>Firebase</span><span>Gemini AI</span><span>Cloud Run</span><span>Firestore</span>
-          </div>
+      <div class="work-grid" id="workGrid">
+
+        <div class="work-filter">
+          <button class="wf" data-f="all"     id="flt-all">All</button>
+          <button class="wf" data-f="flutter" id="flt-flutter">Flutter</button>
+          <button class="wf" data-f="android" id="flt-android">Android</button>
+          <button class="wf" data-f="ai"      id="flt-ai">AI / Web</button>
         </div>
-        <a href="https://github.com/Yashjain329/electwise" target="_blank" rel="noopener" class="feat-link" id="lnk-electwise-gh">
-          View on GitHub
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+
+        <div class="proj-list" id="projList">
+
+          <a href="https://github.com/Yashjain329/electwise" target="_blank" rel="noopener"
+             class="proj-row proj-row--feat" data-cat="ai" id="proj-electwise">
+            <span class="pr-num">01</span>
+            <span class="pr-name">ElectWise</span>
+            <span class="pr-cat">AI · Civic Tech</span>
+            <span class="pr-badge">🏆 Winner</span>
+            <span class="pr-stack">React · Firebase · Gemini AI · Cloud Run</span>
+            <span class="pr-arrow">↗</span>
+          </a>
+
+          <a href="https://github.com/Yashjain329/truck_singh" target="_blank" rel="noopener"
+             class="proj-row" data-cat="flutter" id="proj-truck">
+            <span class="pr-num">02</span>
+            <span class="pr-name">Truck Singh</span>
+            <span class="pr-cat">Flutter · Logistics</span>
+            <span class="pr-badge">★ 2 &nbsp;⑂ 6</span>
+            <span class="pr-stack">Flutter · Dart</span>
+            <span class="pr-arrow">↗</span>
+          </a>
+
+          <a href="https://github.com/Yashjain329/imgshape" target="_blank" rel="noopener"
+             class="proj-row" data-cat="flutter" id="proj-imgshape">
+            <span class="pr-num">03</span>
+            <span class="pr-name">ImgShape</span>
+            <span class="pr-cat">Flutter · Cloud AI</span>
+            <span class="pr-badge">★ 1 &nbsp;⑂ 2</span>
+            <span class="pr-stack">Flutter · Supabase · GCP · Cloud Run</span>
+            <span class="pr-arrow">↗</span>
+          </a>
+
+          <a href="https://github.com/Yashjain329/statgenie" target="_blank" rel="noopener"
+             class="proj-row" data-cat="flutter" id="proj-statgenie">
+            <span class="pr-num">04</span>
+            <span class="pr-name">StatGenie</span>
+            <span class="pr-cat">Flutter · Analytics</span>
+            <span class="pr-badge">★ 1</span>
+            <span class="pr-stack">Flutter · Supabase · Charts</span>
+            <span class="pr-arrow">↗</span>
+          </a>
+
+          <a href="https://github.com/Yashjain329/fintrackr" target="_blank" rel="noopener"
+             class="proj-row" data-cat="flutter" id="proj-fintrackr">
+            <span class="pr-num">05</span>
+            <span class="pr-name">FinTrackr</span>
+            <span class="pr-cat">Flutter · Finance</span>
+            <span class="pr-badge">★ 1</span>
+            <span class="pr-stack">Flutter · Dart</span>
+            <span class="pr-arrow">↗</span>
+          </a>
+
+          <a href="https://github.com/Yashjain329/Shadow_Talk" target="_blank" rel="noopener"
+             class="proj-row" data-cat="flutter" id="proj-shadow">
+            <span class="pr-num">06</span>
+            <span class="pr-name">Shadow Talk</span>
+            <span class="pr-cat">Flutter · Chat</span>
+            <span class="pr-badge">★ 1</span>
+            <span class="pr-stack">Flutter · Dart</span>
+            <span class="pr-arrow">↗</span>
+          </a>
+
+          <a href="https://github.com/Yashjain329/billboard_detector" target="_blank" rel="noopener"
+             class="proj-row" data-cat="flutter" id="proj-billboard">
+            <span class="pr-num">07</span>
+            <span class="pr-name">Billboard Detector</span>
+            <span class="pr-cat">Flutter · Computer Vision</span>
+            <span class="pr-badge">★ 2</span>
+            <span class="pr-stack">Flutter · ML / Image Processing</span>
+            <span class="pr-arrow">↗</span>
+          </a>
+
+          <a href="https://github.com/Yashjain329/AnimeExplorer" target="_blank" rel="noopener"
+             class="proj-row" data-cat="android" id="proj-anime">
+            <span class="pr-num">08</span>
+            <span class="pr-name">AnimeExplorer</span>
+            <span class="pr-cat">Kotlin · Android</span>
+            <span class="pr-badge"></span>
+            <span class="pr-stack">Kotlin · Jetpack Compose · MVVM · Room</span>
+            <span class="pr-arrow">↗</span>
+          </a>
+
+          <a href="https://github.com/Yashjain329/Sensor-Explorer" target="_blank" rel="noopener"
+             class="proj-row" data-cat="android" id="proj-sensor">
+            <span class="pr-num">09</span>
+            <span class="pr-name">Sensor Explorer</span>
+            <span class="pr-cat">Java · Android</span>
+            <span class="pr-badge">★ 2</span>
+            <span class="pr-stack">Java · Android · Fragments</span>
+            <span class="pr-arrow">↗</span>
+          </a>
+
+          <a href="https://github.com/Yashjain329/Medimind_AI" target="_blank" rel="noopener"
+             class="proj-row" data-cat="ai" id="proj-medimind">
+            <span class="pr-num">10</span>
+            <span class="pr-name">MediMind AI</span>
+            <span class="pr-cat">TypeScript · AI · Healthcare</span>
+            <span class="pr-badge"></span>
+            <span class="pr-stack">TypeScript · Firebase · AI APIs · Node.js</span>
+            <span class="pr-arrow">↗</span>
+          </a>
+
+        </div>
+
+        <a href="https://github.com/Yashjain329" target="_blank" rel="noopener" class="all-repos" id="cta-all-repos">
+          All 14 repos on GitHub ↗
         </a>
-      </article>
+      </div>
+    </section>
 
-      <!-- Project grid -->
-      <div class="proj-grid" id="projGrid">
-
-        <article class="proj" data-cat="flutter" data-num="02" id="proj-truck">
-          <div class="proj-meta-row">
-            <span class="proj-num">02</span>
-            <span class="proj-cat">Flutter · Logistics</span>
-            <span class="proj-stat">★ 2 &nbsp;⑂ 6</span>
-          </div>
-          <h3>Truck Singh</h3>
-          <p>Logistics management app for truck delivery operations. Most forked repo in the portfolio. Clean Dart codebase, offline-capable.</p>
-          <div class="proj-stack">
-            <span>Flutter</span><span>Dart</span>
-          </div>
-          <a href="https://github.com/Yashjain329/truck_singh" target="_blank" rel="noopener" class="proj-gh" id="lnk-truck-gh">GitHub →</a>
-        </article>
-
-        <article class="proj" data-cat="flutter" data-num="03" id="proj-imgshape">
-          <div class="proj-meta-row">
-            <span class="proj-num">03</span>
-            <span class="proj-cat">Flutter · Cloud AI</span>
-            <span class="proj-stat">★ 1 &nbsp;⑂ 2</span>
-          </div>
-          <h3>ImgShape</h3>
-          <p>Secure image upload with Supabase Auth &amp; Storage. GCP Cloud Run backend for AI-powered image analysis and downloadable insight reports.</p>
-          <div class="proj-stack">
-            <span>Flutter</span><span>Supabase</span><span>GCP</span>
-          </div>
-          <a href="https://github.com/Yashjain329/imgshape" target="_blank" rel="noopener" class="proj-gh" id="lnk-imgshape-gh">GitHub →</a>
-        </article>
-
-        <article class="proj" data-cat="flutter" data-num="04" id="proj-fintrackr">
-          <div class="proj-meta-row">
-            <span class="proj-num">04</span>
-            <span class="proj-cat">Flutter · Finance</span>
-            <span class="proj-stat">★ 1</span>
-          </div>
-          <h3>FinTrackr</h3>
-          <p>Personal finance tracker — daily transaction logs, spending pattern analysis, savings goals. Clean Material UI.</p>
-          <div class="proj-stack">
-            <span>Flutter</span><span>Dart</span>
-          </div>
-          <a href="https://github.com/Yashjain329/fintrackr" target="_blank" rel="noopener" class="proj-gh" id="lnk-fintrackr-gh">GitHub →</a>
-        </article>
-
-        <article class="proj" data-cat="flutter" data-num="05" id="proj-statgenie">
-          <div class="proj-meta-row">
-            <span class="proj-num">05</span>
-            <span class="proj-cat">Flutter · Analytics</span>
-            <span class="proj-stat">★ 1</span>
-          </div>
-          <h3>StatGenie</h3>
-          <p>Data analysis for field surveyors. Offline-first with Supabase sync, dynamic charts, categorical, numeric, and date slicers.</p>
-          <div class="proj-stack">
-            <span>Flutter</span><span>Supabase</span><span>Charts</span>
-          </div>
-          <a href="https://github.com/Yashjain329/statgenie" target="_blank" rel="noopener" class="proj-gh" id="lnk-statgenie-gh">GitHub →</a>
-        </article>
-
-        <article class="proj" data-cat="flutter" data-num="06" id="proj-shadow">
-          <div class="proj-meta-row">
-            <span class="proj-num">06</span>
-            <span class="proj-cat">Flutter · Chat</span>
-            <span class="proj-stat">★ 1</span>
-          </div>
-          <h3>Shadow Talk</h3>
-          <p>Cross-platform chat app with real-time messaging architecture and a clean, intuitive interface built on Flutter.</p>
-          <div class="proj-stack">
-            <span>Flutter</span><span>Dart</span>
-          </div>
-          <a href="https://github.com/Yashjain329/Shadow_Talk" target="_blank" rel="noopener" class="proj-gh" id="lnk-shadow-gh">GitHub →</a>
-        </article>
-
-        <article class="proj" data-cat="flutter" data-num="07" id="proj-billboard">
-          <div class="proj-meta-row">
-            <span class="proj-num">07</span>
-            <span class="proj-cat">Flutter · CV</span>
-            <span class="proj-stat">★ 2</span>
-          </div>
-          <h3>Billboard Detector</h3>
-          <p>Real-time billboard detection in images and live camera feeds using image processing. Cross-platform iOS and Android.</p>
-          <div class="proj-stack">
-            <span>Flutter</span><span>Image Processing</span>
-          </div>
-          <a href="https://github.com/Yashjain329/billboard_detector" target="_blank" rel="noopener" class="proj-gh" id="lnk-billboard-gh">GitHub →</a>
-        </article>
-
-        <article class="proj" data-cat="android" data-num="08" id="proj-anime-android">
-          <div class="proj-meta-row">
-            <span class="proj-num">08</span>
-            <span class="proj-cat">Kotlin · Android</span>
-          </div>
-          <h3>AnimeExplorer</h3>
-          <p>Native Android with Jetpack Compose, MVVM + Hilt DI, Jikan API. Material 3 — trending lists, favorites, Room caching.</p>
-          <div class="proj-stack">
-            <span>Kotlin</span><span>Jetpack Compose</span><span>MVVM</span>
-          </div>
-          <a href="https://github.com/Yashjain329/AnimeExplorer" target="_blank" rel="noopener" class="proj-gh" id="lnk-anime-gh">GitHub →</a>
-        </article>
-
-        <article class="proj" data-cat="android" data-num="09" id="proj-sensor">
-          <div class="proj-meta-row">
-            <span class="proj-num">09</span>
-            <span class="proj-cat">Java · Android</span>
-            <span class="proj-stat">★ 2</span>
-          </div>
-          <h3>Sensor Explorer</h3>
-          <p>Shows all smartphone sensors — real-time readings, maker details, max I/O values. Built with Java Fragments.</p>
-          <div class="proj-stack">
-            <span>Java</span><span>Android</span><span>Fragments</span>
-          </div>
-          <a href="https://github.com/Yashjain329/Sensor-Explorer" target="_blank" rel="noopener" class="proj-gh" id="lnk-sensor-gh">GitHub →</a>
-        </article>
-
-        <article class="proj" data-cat="ai" data-num="10" id="proj-medimind">
-          <div class="proj-meta-row">
-            <span class="proj-num">10</span>
-            <span class="proj-cat">TypeScript · AI</span>
-          </div>
-          <h3>MediMind AI</h3>
-          <p>AI-powered healthcare assistant — symptom analysis, doctor–patient interaction flows, secure auth &amp; Firebase backend.</p>
-          <div class="proj-stack">
-            <span>TypeScript</span><span>Firebase</span><span>AI APIs</span>
-          </div>
-          <a href="https://github.com/Yashjain329/Medimind_AI" target="_blank" rel="noopener" class="proj-gh" id="lnk-medimind-gh">GitHub →</a>
-        </article>
-
+    <!-- SECTION 5: ABOUT / EXPERIENCE -->
+    <section class="snap-sec" id="about">
+      <div class="corner-name">
+        BACKGROUND
+        <span class="corner-sub">2022 – present</span>
       </div>
 
-      <div class="proj-more">
-        <a href="https://github.com/Yashjain329" target="_blank" rel="noopener" class="btn-line" id="cta-all-repos">All 14 repos on GitHub →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── EXPERIENCE ── -->
-  <section id="experience" class="section section--alt">
-    <div class="container">
-      <div class="section-tag">Journey</div>
-      <h2 class="section-title">Experience &amp; milestones</h2>
-
-      <div class="exp-grid">
-        <div class="timeline" role="list">
-
-          <div class="tl-row" id="tl-internship" role="listitem">
-            <div class="tl-date">Jun–Dec 2025</div>
-            <div class="tl-content">
-              <div class="tl-role">Flutter Developer Intern</div>
-              <div class="tl-where">
-                UptoSkills · Delhi
-                <span class="tl-tag">Intern of the Month</span>
-              </div>
-              <ul class="tl-list">
-                <li>Built Flutter features across multiple production app screens</li>
-                <li>Integrated PostgreSQL, OneSignal &amp; Google Maps API</li>
-                <li>Implemented OAuth and session-based authentication flows</li>
-                <li><strong>Promoted to lead a team of 15–20 developers</strong> — coordinating releases and code reviews</li>
-              </ul>
-            </div>
+      <div class="about-split">
+        <div class="about-left">
+          <div class="exp-item" id="tl-internship">
+            <div class="exp-period">Jun–Dec 2025</div>
+            <div class="exp-role">Flutter Developer Intern</div>
+            <div class="exp-org">UptoSkills · Delhi <span class="exp-tag">Intern of the Month</span></div>
+            <p>Led a 15–20 person dev team. Integrated PostgreSQL, OneSignal, Google Maps. OAuth auth flows.</p>
           </div>
-
-          <div class="tl-row tl-row--win" id="tl-hack" role="listitem">
-            <div class="tl-date">2026</div>
-            <div class="tl-content">
-              <div class="tl-role">Hackathon Winner &mdash; Hack2Skill PromptWars</div>
-              <div class="tl-where">National competition</div>
-              <p>Built and shipped <strong>ElectWise</strong> — an AI civic education platform powered by Gemini 2.0 Flash — winning the national hackathon.</p>
-            </div>
+          <div class="exp-item" id="tl-hack">
+            <div class="exp-period">2026</div>
+            <div class="exp-role exp-win">Hackathon Winner — Hack2Skill PromptWars</div>
+            <div class="exp-org">National · ElectWise</div>
+            <p>Built and shipped a Gemini 2.0 AI civic platform. Won nationally.</p>
           </div>
-
-          <div class="tl-row" id="tl-ideathon" role="listitem">
-            <div class="tl-date">National</div>
-            <div class="tl-content">
-              <div class="tl-role">9th Place &mdash; Ideathon 2.0</div>
-              <div class="tl-where">Team GRUBOX · Team Leader</div>
-              <p>Led Team GRUBOX in the national Ideathon 2.0, placing in the top 10 out of hundreds of participating teams.</p>
-            </div>
+          <div class="exp-item" id="tl-edu">
+            <div class="exp-period">2022–2027</div>
+            <div class="exp-role">B.Tech + M.Tech (Int.) CSE</div>
+            <div class="exp-org">NIMS University · CGPA 7.05</div>
           </div>
-
-          <div class="tl-row" id="tl-edu" role="listitem">
-            <div class="tl-date">2022–2027</div>
-            <div class="tl-content">
-              <div class="tl-role">B.Tech + M.Tech (Int.) in CSE</div>
-              <div class="tl-where">NIMS University · CGPA 7.05</div>
-              <p>Integrated dual-degree in Computer Science Engineering, specializing in mobile development, cloud, and AI systems.</p>
-            </div>
-          </div>
-
         </div>
 
-        <aside class="certs">
-          <h3>Certifications</h3>
-          <div class="cert-items">
-            <div class="cert" id="cert-1">
-              <div class="cert-name">Circuit Designing &amp; TinkerCAD</div>
-              <div class="cert-from">Workshop · NIMS University</div>
-            </div>
-            <div class="cert" id="cert-2">
-              <div class="cert-name">MATLAB &amp; SIMULINK</div>
-              <div class="cert-from">Design Tech Workshop</div>
-            </div>
-            <div class="cert" id="cert-3">
-              <div class="cert-name">AI Tools &amp; ChatGPT</div>
-              <div class="cert-from">Be10X Workshop</div>
-            </div>
-            <div class="cert" id="cert-4">
-              <div class="cert-name">Supabase Bootcamp</div>
-              <div class="cert-from">Lets Upgrade</div>
-            </div>
-            <div class="cert" id="cert-5">
-              <div class="cert-name">Flutter App Development</div>
-              <div class="cert-from">UptoSkills</div>
-            </div>
-            <div class="cert" id="cert-6">
-              <div class="cert-name">Internship Certificate</div>
-              <div class="cert-from">UptoSkills · Flutter Intern</div>
-            </div>
+        <div class="about-right">
+          <div class="stack-block">
+            <div class="stack-label">MOBILE</div>
+            <div class="stack-items">Flutter · Dart · Kotlin · Jetpack Compose · Swift</div>
           </div>
-        </aside>
+          <div class="stack-block">
+            <div class="stack-label">BACKEND</div>
+            <div class="stack-items">Firebase · Supabase · PostgreSQL · Node.js</div>
+          </div>
+          <div class="stack-block">
+            <div class="stack-label">CLOUD</div>
+            <div class="stack-items">GCP · Cloud Run · Docker · Firebase Hosting</div>
+          </div>
+          <div class="stack-block">
+            <div class="stack-label">AI / WEB</div>
+            <div class="stack-items">Python · Gemini AI · React 19 · TypeScript</div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ── CONTACT ── -->
-  <section id="contact" class="section">
-    <div class="container">
-      <div class="section-tag">Contact</div>
-      <h2 class="section-title">Let's work together</h2>
-      <p class="section-desc">Open to freelance projects, internships, and full-time roles. Reach out — I respond fast.</p>
+    <!-- SECTION 6: PHILOSOPHY 3 -->
+    <section class="snap-sec" id="p3">
+      <div class="corner-quote corner-quote--left">
+        Hackathon win. Intern of the Month. 9th nationally.<br/>
+        <strong>Real results.</strong>
+      </div>
+      <div class="bottom-text bottom-text--right">
+        <h2 class="bt-headline">You define<br/>the problem.<br/>I'll build<br/>the solution.</h2>
+      </div>
+    </section>
 
-      <div class="contact-grid">
+    <!-- SECTION 7: CONTACT -->
+    <section class="snap-sec" id="contact">
+      <div class="corner-name">
+        LET'S BUILD
+        <span class="corner-sub">Delhi, India · Available now</span>
+      </div>
 
-        <div class="contact-info">
+      <div class="contact-body">
+        <div class="contact-links">
           <a href="mailto:Yashjain9350@gmail.com" class="clink" id="info-email">
-            <div class="clink-label">Email</div>
-            <div class="clink-val">Yashjain9350@gmail.com</div>
+            <span class="cl-label">Email</span>
+            <span class="cl-val">Yashjain9350@gmail.com ↗</span>
           </a>
           <a href="tel:+919871170957" class="clink" id="info-phone">
-            <div class="clink-label">Phone</div>
-            <div class="clink-val">+91-9871170957</div>
+            <span class="cl-label">Phone</span>
+            <span class="cl-val">+91-9871170957</span>
           </a>
           <a href="https://linkedin.com/in/yash-jain329/" target="_blank" rel="noopener" class="clink" id="info-linkedin">
-            <div class="clink-label">LinkedIn</div>
-            <div class="clink-val">linkedin.com/in/yash-jain329/</div>
+            <span class="cl-label">LinkedIn</span>
+            <span class="cl-val">yash-jain329 ↗</span>
           </a>
           <a href="https://github.com/Yashjain329" target="_blank" rel="noopener" class="clink" id="info-github">
-            <div class="clink-label">GitHub</div>
-            <div class="clink-val">github.com/Yashjain329</div>
+            <span class="cl-label">GitHub</span>
+            <span class="cl-val">Yashjain329 ↗</span>
           </a>
-
-          <div class="resume-block">
-            <div class="resume-block-label">Resume</div>
-            <div class="resume-block-btns">
-              <a href="Yash_Jain_Resume (2).pdf" download class="btn-solid btn-sm" id="dl-gen-resume">General</a>
-              <a href="Yash_Jain_Resume__Copy__AI (1).pdf" download class="btn-line btn-sm" id="dl-ai-resume">AI-Focused</a>
-            </div>
+          <div class="clink">
+            <span class="cl-label">Resume</span>
+            <span class="cl-val">
+              <a href="Yash_Jain_Resume (2).pdf" download id="dl-gen-resume">General ↓</a>
+              &nbsp;/&nbsp;
+              <a href="Yash_Jain_Resume__Copy__AI (1).pdf" download id="dl-ai-resume">AI-Focused ↓</a>
+            </span>
           </div>
         </div>
 
         <form class="cform" id="contactForm" onsubmit="handleSubmit(event)">
           <div class="cform-row">
-            <div class="cform-field">
-              <label for="f-name">Name</label>
-              <input type="text" id="f-name" name="name" placeholder="Your name" required/>
-            </div>
-            <div class="cform-field">
-              <label for="f-email">Email</label>
-              <input type="email" id="f-email" name="email" placeholder="your@email.com" required/>
-            </div>
+            <input type="text"  id="f-name"    name="name"    placeholder="Name"    required/>
+            <input type="email" id="f-email"   name="email"   placeholder="Email"   required/>
           </div>
-          <div class="cform-field">
-            <label for="f-subject">Subject</label>
-            <input type="text" id="f-subject" name="subject" placeholder="What are you working on?"/>
-          </div>
-          <div class="cform-field">
-            <label for="f-msg">Message</label>
-            <textarea id="f-msg" name="message" rows="5" placeholder="Tell me about the project..." required></textarea>
-          </div>
-          <button type="submit" class="btn-solid btn-full" id="submitBtn">
-            <span id="btnLabel">Send Message</span>
-          </button>
-          <p class="cform-success" id="formSuccess">Sent — I'll get back to you soon.</p>
+          <input type="text" id="f-subject" name="subject" placeholder="Subject"/>
+          <textarea id="f-msg" name="message" rows="4" placeholder="What are you building?" required></textarea>
+          <button type="submit" id="submitBtn"><span id="btnLabel">Send →</span></button>
+          <p class="cform-ok" id="formSuccess">Sent — I'll get back to you.</p>
         </form>
       </div>
-    </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <span class="footer-name">Yash Jain</span>
-      <nav class="footer-links" aria-label="Footer links">
-        <a href="https://github.com/Yashjain329" target="_blank" rel="noopener" id="f-github">GitHub</a>
-        <a href="https://linkedin.com/in/yash-jain329/" target="_blank" rel="noopener" id="f-linkedin">LinkedIn</a>
-        <a href="mailto:Yashjain9350@gmail.com" id="f-email2">Email</a>
-      </nav>
-      <span class="footer-copy">&copy; 2026</span>
-    </div>
-  </footer>
+      <div class="footer-line">
+        <span>Yash Jain &copy; 2026</span>
+        <span>Flutter · Android · AI</span>
+      </div>
+    </section>
+
+  </main>
 
   <script src="main.js"></script>
 </body>

@@ -1,117 +1,205 @@
-/* Portfolio JS — Yash Jain */
+/* ═══════════════════════════════════════════
+   PORTFOLIO JS — Yash Jain
+   Snap-scroll site inspired by rishabh-upadhyay.com
+═══════════════════════════════════════════ */
 
-/* ── NAV ── */
-const nav       = document.getElementById('mainNav');
-const navMenu   = document.getElementById('navMenu');
-const hamburger = document.getElementById('navHamburger');
+/* ── SECTION IDs IN ORDER ── */
+const sections = ['home','p1','p2','work','about','p3','contact'];
 
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('stuck', window.scrollY > 48);
+/* ── INTRO ANIMATION ── */
+function runIntro() {
+  const letters = document.querySelectorAll('.il');
+  const intro   = document.getElementById('intro');
+  const nav     = document.getElementById('mainNav');
+
+  // Stagger letters in
+  letters.forEach((l, i) => {
+    setTimeout(() => l.classList.add('show'), 80 + i * 55);
+  });
+
+  // Hold, then fade out overlay
+  setTimeout(() => {
+    intro.style.transition = 'opacity .7s ease';
+    intro.style.opacity = '0';
+    setTimeout(() => {
+      intro.style.display = 'none';
+      // Animate in content for first section
+      activateSection('home');
+    }, 700);
+  }, 1800);
+
+  // Show nav after intro
+  setTimeout(() => nav.classList.add('visible'), 2000);
+}
+
+/* ── ACTIVATE SECTION (fade in corner quotes + bottom text) ── */
+function activateSection(id) {
+  const sec = document.getElementById(id);
+  if (!sec) return;
+  sec.querySelectorAll('.corner-quote, .bottom-text').forEach(el => {
+    el.classList.add('show');
+  });
+}
+
+/* ── SCROLL DETECTION ── */
+const scroller = document.getElementById('scroller');
+let currentIdx = 0;
+
+function getVisibleSection() {
+  const scrollTop = scroller.scrollTop;
+  const height    = window.innerHeight;
+  return Math.round(scrollTop / height);
+}
+
+scroller.addEventListener('scroll', () => {
+  const idx = getVisibleSection();
+  if (idx !== currentIdx) {
+    currentIdx = idx;
+    const id = sections[idx];
+
+    // Update nav active
+    document.querySelectorAll('.fnav-link').forEach(l => {
+      l.classList.toggle('active', l.dataset.s === id || (idx < 3 && l.dataset.s === 'home') || (idx === 3 && l.dataset.s === 'work') || (idx === 4 && l.dataset.s === 'about') || (idx === 6 && l.dataset.s === 'contact'));
+    });
+
+    // Update dots
+    document.querySelectorAll('.sec-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === idx);
+    });
+
+    // Animate section content in
+    activateSection(id);
+  }
 }, { passive: true });
 
-hamburger.addEventListener('click', () => {
-  const open = navMenu.classList.toggle('open');
-  hamburger.setAttribute('aria-expanded', open);
-});
-navMenu.querySelectorAll('.nav-link').forEach(l =>
-  l.addEventListener('click', () => navMenu.classList.remove('open'))
-);
+/* ── HERO PARTICLE CANVAS ── */
+function initCanvas() {
+  const canvas = document.getElementById('heroCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
 
-/* ── TYPED EFFECT ── */
-const phrases = [
-  'Flutter apps',
-  'Android experiences',
-  'AI-powered tools',
-  'Firebase backends',
-  'GCP deployments',
-  'cross-platform UIs',
-];
-let pi = 0, ci = 0, deleting = false;
-const typed = document.getElementById('roleTyped');
+  let W, H, particles = [];
 
-function tick() {
-  const word = phrases[pi];
-  if (!deleting) {
-    typed.textContent = word.slice(0, ++ci);
-    if (ci === word.length) { deleting = true; setTimeout(tick, 2200); return; }
-  } else {
-    typed.textContent = word.slice(0, --ci);
-    if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
   }
-  setTimeout(tick, deleting ? 38 : 68);
-}
-tick();
+  resize();
+  window.addEventListener('resize', resize);
 
-/* ── SCROLL REVEAL ── */
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const delay = +e.target.dataset.delay || 0;
-      setTimeout(() => e.target.classList.add('in'), delay);
-      io.unobserve(e.target);
+  // Create particles
+  const NUM = window.innerWidth < 600 ? 60 : 120;
+  for (let i = 0; i < NUM; i++) {
+    particles.push({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: Math.random() * 1.5 + 0.3,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      o: Math.random() * 0.4 + 0.1,
+    });
+  }
+
+  let mouse = { x: W / 2, y: H / 2 };
+  canvas.parentElement.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    // Draw connections
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const d  = Math.sqrt(dx * dx + dy * dy);
+        if (d < 120) {
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(255,255,255,${0.06 * (1 - d / 120)})`;
+          ctx.lineWidth = 0.5;
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Draw particles
+    particles.forEach(p => {
+      // Mouse repulsion
+      const dx = mouse.x - p.x;
+      const dy = mouse.y - p.y;
+      const d  = Math.sqrt(dx * dx + dy * dy);
+      if (d < 100) {
+        p.vx -= (dx / d) * 0.08;
+        p.vy -= (dy / d) * 0.08;
+      }
+
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vx *= 0.99;
+      p.vy *= 0.99;
+
+      // Wrap
+      if (p.x < 0) p.x = W;
+      if (p.x > W) p.x = 0;
+      if (p.y < 0) p.y = H;
+      if (p.y > H) p.y = 0;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255,255,255,${p.o})`;
+      ctx.fill();
+    });
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+}
+
+/* ── SECTION DOTS ── */
+function buildDots() {
+  const container = document.createElement('div');
+  container.className = 'sec-dots';
+  sections.forEach((id, i) => {
+    const d = document.createElement('div');
+    d.className = 'sec-dot' + (i === 0 ? ' active' : '');
+    d.title = id;
+    d.addEventListener('click', () => {
+      scroller.scrollTo({ top: i * window.innerHeight, behavior: 'smooth' });
+    });
+    container.appendChild(d);
+  });
+  document.body.appendChild(container);
+}
+
+/* ── NAV LINK CLICK ── */
+document.querySelectorAll('.fnav-link').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const id  = link.dataset.s;
+    const idx = sections.indexOf(id);
+    if (idx !== -1) {
+      scroller.scrollTo({ top: idx * window.innerHeight, behavior: 'smooth' });
     }
   });
-}, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
-
-function addReveal(selector, stagger = 60) {
-  document.querySelectorAll(selector).forEach((el, i) => {
-    el.classList.add('reveal');
-    el.dataset.delay = i * stagger;
-    io.observe(el);
-  });
-}
-
-addReveal('.fact',        70);
-addReveal('.skill-row',   55);
-addReveal('.proj',        45);
-addReveal('.tl-row',      80);
-addReveal('.cert',        40);
-addReveal('.clink',       50);
-addReveal('.proj-featured', 0);
-
-/* ── ACTIVE NAV ── */
-const sectionIds = ['hero','about','skills','projects','experience','contact'];
-const navLinks   = document.querySelectorAll('.nav-link');
-
-function updateNav() {
-  const mid = window.scrollY + window.innerHeight * 0.38;
-  sectionIds.forEach(id => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    if (mid >= el.offsetTop && mid < el.offsetTop + el.offsetHeight) {
-      navLinks.forEach(l => l.classList.remove('active'));
-      document.querySelector(`.nav-link[data-section="${id}"]`)?.classList.add('active');
-    }
-  });
-}
-window.addEventListener('scroll', updateNav, { passive: true });
-updateNav();
+});
 
 /* ── PROJECT FILTER ── */
-const filterBtns = document.querySelectorAll('.flt');
+const filterBtns = document.querySelectorAll('.wf');
+filterBtns[0]?.classList.add('active');
+
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const f = btn.dataset.f;
-    const featured = document.querySelector('.proj-featured');
-    if (featured) {
-      featured.style.display = (f === 'all' || featured.dataset.cat === f) ? '' : 'none';
-    }
-    document.querySelectorAll('.proj').forEach(c => {
-      c.classList.toggle('proj-hidden', f !== 'all' && c.dataset.cat !== f);
+    document.querySelectorAll('.proj-row').forEach(row => {
+      row.classList.toggle('hidden', f !== 'all' && row.dataset.cat !== f);
     });
-  });
-});
-
-// Init first button active
-filterBtns[0]?.classList.add('active');
-
-/* ── SMOOTH SCROLL ── */
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const target = document.getElementById(a.getAttribute('href').slice(1));
-    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
   });
 });
 
@@ -124,10 +212,17 @@ function handleSubmit(e) {
   btn.disabled = true;
   lbl.textContent = 'Sending…';
   setTimeout(() => {
-    lbl.textContent = 'Send Message';
+    lbl.textContent = 'Send →';
     succ.style.display = 'block';
     btn.disabled = false;
     e.target.reset();
     setTimeout(() => { succ.style.display = 'none'; }, 5000);
   }, 900);
 }
+
+/* ── INIT ── */
+document.addEventListener('DOMContentLoaded', () => {
+  buildDots();
+  initCanvas();
+  runIntro();
+});
