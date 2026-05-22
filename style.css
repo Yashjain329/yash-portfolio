@@ -160,6 +160,44 @@ button { cursor: pointer; font-family: var(--font-h); }
 }
 #heroCanvas { display: block; width: 100%; height: 100%; }
 
+/* ── HERO FOCAL: rotating ring + initials ── */
+.hero-focal {
+  position: absolute; z-index: 6;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none;
+}
+
+.focal-ring {
+  width:  min(52vmin, 300px);
+  height: min(52vmin, 300px);
+  animation: focalSpin 22s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes focalSpin {
+  from { transform: rotate(0deg);   }
+  to   { transform: rotate(360deg); }
+}
+
+.focal-center {
+  position: absolute;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px; text-align: center;
+}
+.focal-init {
+  font-family: var(--font-h); font-weight: 900;
+  font-size: clamp(2.8rem, 6vmin, 4.2rem);
+  color: var(--white); letter-spacing: -.03em; line-height: 1;
+  display: block;
+}
+.focal-sub {
+  font-family: var(--font-m); font-size: .58rem;
+  color: var(--muted); text-transform: uppercase;
+  letter-spacing: .18em; display: block;
+}
+
 /* ── WORK SECTION ── */
 #work { justify-content: flex-start; }
 

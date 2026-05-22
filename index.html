@@ -40,8 +40,40 @@
       </div>
 
       <div class="center-visual" id="heroVisual">
-        <!-- Particle canvas -->
         <canvas id="heroCanvas"></canvas>
+      </div>
+
+      <!-- FOCAL: Rotating ring + initials -->
+      <div class="hero-focal" id="heroFocal">
+        <svg class="focal-ring" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <path id="rp" d="M 140,140 m -100,0 a 100,100 0 1,1 200,0 a 100,100 0 1,1 -200,0"/>
+          </defs>
+          <!-- Rings -->
+          <circle cx="140" cy="140" r="118" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+          <circle cx="140" cy="140" r="100" fill="none" stroke="rgba(255,255,255,0.1)"  stroke-width="1"/>
+          <circle cx="140" cy="140" r="82"  fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+          <!-- Cardinal ticks -->
+          <line x1="140" y1="36"  x2="140" y2="48"  stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="244" y1="140" x2="232" y2="140" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="140" y1="244" x2="140" y2="232" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="36"  y1="140" x2="48"  y2="140" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Small dots at 45deg positions -->
+          <circle cx="211" cy="69"  r="1.8" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="211" cy="211" r="1.8" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="69"  cy="211" r="1.8" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="69"  cy="69"  r="1.8" fill="rgba(255,255,255,0.25)"/>
+          <!-- Rotating text on ring -->
+          <text fill="rgba(255,255,255,0.38)" font-size="10" font-family="JetBrains Mono,monospace" letter-spacing="3.2">
+            <textPath href="#rp">FLUTTER · ANDROID · AI · FIREBASE · GCP · KOTLIN · </textPath>
+          </text>
+        </svg>
+
+        <!-- Stationary center -->
+        <div class="focal-center">
+          <span class="focal-init">YJ</span>
+          <span class="focal-sub">Building since 2022</span>
+        </div>
       </div>
 
       <div class="bottom-text bottom-text--right">
