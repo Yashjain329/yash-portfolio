@@ -2,7 +2,7 @@
 
 > Personal developer portfolio for **Yash Jain** — Flutter & AI Developer. Showcases projects, experience, and contact info. Deployed via Netlify.
 
-[![Live Site](https://img.shields.io/badge/Live-yash--portfolio.netlify.app-blueviolet?style=flat-square)](https://yash-portfolio.netlify.app)
+[![Live Site](https://img.shields.io/badge/Live-yash--portfolio.netlify.app-blueviolet?style=flat-square)](https://yashjain-portfolio-dev.netlify.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-Yashjain329-181717?style=flat-square&logo=github)](https://github.com/Yashjain329)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-yash--jain329-0077B5?style=flat-square&logo=linkedin)](https://linkedin.com/in/yash-jain329/)
 
